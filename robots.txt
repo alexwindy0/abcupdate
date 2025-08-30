@@ -1,0 +1,7 @@
+# robots.txt for Asaba Business Community
+# Allow everything by default (adjust if you need to disallow staging paths)
+User-agent: *
+Disallow:
+
+Sitemap: https://asababusinesscommunity.com/sitemap.xml
+Host: asababusinesscommunity.com

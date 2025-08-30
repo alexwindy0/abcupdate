@@ -1,0 +1,571 @@
+<!--
+  /team.html
+  Purpose: Team and advisory page for Asaba Business Community (ABC).
+  Features:
+    - Team grid with photos, short bios, social links.
+    - Single accessible modal to view full team bios (populated by data attributes / inline map).
+    - Advisory Circle and Volunteers sub-sections.
+    - Clear CTAs: Join / Volunteer / Partner.
+    - Semantic landmarks, skip-to-content, ARIA attributes, and reduced-motion considerations.
+    - Images expected in /assets/img/team/*.jpg
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Team — Asaba Business Community</title>
+  <meta name="description" content="Team Asaba Business Community — Leadership and Teams" />
+
+  <!-- Google Fonts preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS & GLightbox CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+
+  <!-- JSON-LD: sample Person entries for key team members -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Asaba Business Community",
+        "url": "https://asababusinesscommunity.com",
+        "logo": "https://asababusinesscommunity.com/assets/img/logo/abc-logo.png"
+      },
+      {
+        "@type": "Person",
+        "name": "Adaeze Onwubiko",
+        "image": "https://asababusinesscommunity.com/assets/img/team/team3.webp",
+        "jobTitle": "Founder & Executive Director",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Asaba Business Community"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/adaeze-onwubiko"
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ruth Ukwuani",
+        "image": "https://asababusinesscommunity.com/assets/img/team/team4.webp",
+        "jobTitle": "Growth Gurus Team",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Asaba Business Community"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Theme favicons -->
+  <link rel="icon" href="./assets/img/logo/favicon.svg" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+
+
+
+</head>
+<body class="bg-light">
+
+
+
+  <!-- Header / Navbar -->
+  <header class="sticky-top shadow-sm bg-white">
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-light container" aria-label="Primary navigation">
+      <div class="container-fluid px-0">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="/index.html">
+          <img src="./assets/img/logo/abc-logo.png" alt="Asaba Business Community logo" width="40" height="40" loading="lazy">
+          <span class="fw-bold">Asaba Business Community</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapseTeam" aria-controls="navCollapseTeam" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navCollapseTeam">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="./index.html#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="./about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="./events.html">Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="./projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="./team.html">Team</a></li>
+            <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+            <li class="nav-item ms-3">
+              <a class="btn btn-primary btn-sm js-purchase-btn" role="button" data-purchase-url="#" aria-label="Join or buy a stall">Join Us Now</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="container my-5">
+    <!-- Hero / Intro -->
+    <section class="mb-4" data-aos="fade-up">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <h1 class="display-6 lh-1">Meet the team</h1>
+          <p class="lead text-muted">
+            A small, dedicated team of community leaders, program managers, and volunteers who run events, and 
+            partnerships to help Asaba's Business Community thrive.
+          </p>
+          <p class="small text-muted mb-0">
+            Our team combines local market experience with program design and operations expertise — 
+            focused on measurable outcomes for vendors.
+          </p>
+        </div>
+        <!-- <div class="col-lg-4 text-lg-end">
+          <a class="btn btn-outline-primary btn-sm" href="/contact.html?type=volunteer">Volunteer with us</a>
+        </div> -->
+      </div>
+    </section>
+
+    <!-- Leadership grid -->
+    <section aria-labelledby="leadership-heading" class="mb-5">
+      <h2 id="leadership-heading" class="h5 mb-3" data-aos="fade-up">Leadership</h2>
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+        <!-- Card: Adaeze Onwubiko -->
+        <article class="col" data-aos="fade-up" data-aos-delay="30">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="ratio ratio-4x3 overflow-hidden">
+              <img src="./assets/img/team/team3.webp" alt="Chinyere Okafor, Founder and Executive Director" class="object-cover" loading="lazy" width="600" height="450">
+            </div>
+            <div class="card-body">
+              <h3 class="h6 mb-1">Adaeze Onwubiko</h3>
+              <p class="text-muted small mb-2">Founder &amp; Executive Director</p>
+              <p class="small text-muted mb-3">
+                A dynamic entrepreneur and the founder of the Asaba Business Community, 
+                an initiative she launched to uplift and empower local vendors in her city. 
+                Through this platform, she has created a supportive environment where business owners can connect, 
+                exchange ideas, and collaborate on projects that drive their success.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <!-- <div class="btn-group" role="group" aria-label="Chinyere actions">
+                  <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#teamModal" data-member="Adaeze" aria-label="View full profile for Adaeze">View profile</button>
+                </div> -->
+                <!-- <div class="social-links">
+                  <a href="https://www.linkedin.com/in/chinyere-okafor" class="text-muted ms-2" aria-label="Chinyere on LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card: Ruth Ukwuani -->
+        <article class="col" data-aos="fade-up" data-aos-delay="60">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="ratio ratio-4x3 overflow-hidden">
+              <img src="./assets/img/team/team4.webp" alt="Ruth Ukwuani" class="object-cover" loading="lazy" width="600" height="450">
+            </div>
+            <div class="card-body">
+              <h3 class="h6 mb-1">Ruth Ukwuani</h3>
+              <p class="text-muted small mb-2">Growth Gurus Team</p>
+              <p class="small text-muted mb-3">
+                Owns Nerych Integrated Services, a business that provides food for events and supplies food items in bulk. 
+                She also runs a cooperative savings group with over 150 business owners as members. Additionally, 
+                she leads the Growth Gurus team for Asaba vendors.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <!-- <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#teamModal" data-member="emeka" aria-label="View full profile for Emeka">View profile</button>
+                <div class="social-links">
+                  <a href="https://www.linkedin.com/in/emeka-udoh" class="text-muted ms-2" aria-label="Emeka on LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card: Anwasia Anthonia -->
+        <article class="col" data-aos="fade-up" data-aos-delay="60">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="ratio ratio-4x3 overflow-hidden">
+              <img src="./assets/img/team/team2.webp" alt="Anwasia Anthonia" class="object-cover" loading="lazy" width="600" height="450">
+            </div>
+            <div class="card-body">
+              <h3 class="h6 mb-1">Anwasia Anthonia</h3>
+              <p class="text-muted small mb-2">Hustle Heros</p>
+              <p class="small text-muted mb-3">
+                She has a PhD in Agricultural Economics from the University of Nigeria, Nsukka. 
+                She owns Errand Girl Logistics, a company that handles errands and logistics for businesses. 
+                She also leads the Hustle heros team for Asaba vendors. 
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <!-- <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#teamModal" data-member="emeka" aria-label="View full profile for Emeka">View profile</button>
+                <div class="social-links">
+                  <a href="https://www.linkedin.com/in/emeka-udoh" class="text-muted ms-2" aria-label="Emeka on LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card: Christabel Efe -->
+        <article class="col" data-aos="fade-up" data-aos-delay="60">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="ratio ratio-4x3 overflow-hidden">
+              <img src="./assets/img/team/team5.webp" alt="Christabel Efe" class="object-cover" loading="lazy" width="600" height="450">
+            </div>
+            <div class="card-body">
+              <h3 class="h6 mb-1">Christabel Efe</h3>
+              <p class="text-muted small mb-2">Verification Team</p>
+              <p class="small text-muted mb-3">
+                Owns Christabel Collections, a brand that offers clothing, shoes, bags, and household essentials. 
+                She also owns Strawberry, a popular popcorn brand. She currently leads the Verification team.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <!-- <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#teamModal" data-member="emeka" aria-label="View full profile for Emeka">View profile</button>
+                <div class="social-links">
+                  <a href="https://www.linkedin.com/in/emeka-udoh" class="text-muted ms-2" aria-label="Emeka on LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card: Ifeanyi Nwose -->
+        <article class="col" data-aos="fade-up" data-aos-delay="60">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="ratio ratio-4x3 overflow-hidden">
+              <img src="./assets/img/team/team1.webp" alt="Ifeanyi Nwose" class="object-cover" loading="lazy" width="600" height="450">
+            </div>
+            <div class="card-body">
+              <h3 class="h6 mb-1">Ifeanyi Nwose</h3>
+              <p class="text-muted small mb-2">Visionaries</p>
+              <p class="small text-muted mb-3">
+                Currently heads the VISIONARIES. He is the founder and owner of DJ Finest Entertainment Empire, a prominent name 
+                in the local entertainment scene, renowned for organizing the best after-parties in town. his ability to create unforgettable
+                experiences has earned him a loyal follwing and solidified his reputation as a top event host. in addition to his work in entertainment,
+                he has succssfully ventured into the business of selling electrical parts, demostrating his entrepreneurial spirit and versatility
+                accross different industries. His passion for both entertainment and business continues to drive in success. 
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <!-- <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#teamModal" data-member="emeka" aria-label="View full profile for Emeka">View profile</button>
+                <div class="social-links">
+                  <a href="https://www.linkedin.com/in/emeka-udoh" class="text-muted ms-2" aria-label="Emeka on LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card: Ekene Monyei -->
+        <article class="col" data-aos="fade-up" data-aos-delay="60">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="ratio ratio-4x3 overflow-hidden">
+              <img src="./assets/img/team/team7.webp" alt="Ekene Monyei" class="object-cover" loading="lazy" width="600" height="450">
+            </div>
+            <div class="card-body">
+              <h3 class="h6 mb-1">Ekene Monyei</h3>
+              <p class="text-muted small mb-2">Innovators Team</p>
+              <p class="small text-muted mb-3">
+                Is an experienced educator and manager with over 10 years in the education sector. 
+                She is highly skilled and runs Reddaofresh, a large seafood brand that meets all seafood needs in Asaba. 
+                She also leads the Innovators team for Asaba vendors.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <!-- <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#teamModal" data-member="emeka" aria-label="View full profile for Emeka">View profile</button>
+                <div class="social-links">
+                  <a href="https://www.linkedin.com/in/emeka-udoh" class="text-muted ms-2" aria-label="Emeka on LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card: Anita Nwabukwu -->
+        <article class="col" data-aos="fade-up" data-aos-delay="60">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="ratio ratio-4x3 overflow-hidden">
+              <img src="./assets/img/team/team6.webp" alt="Anita Nwabukwu" class="object-cover" loading="lazy" width="600" height="450">
+            </div>
+            <div class="card-body">
+              <h3 class="h6 mb-1">Anita Nwabukwu</h3>
+              <p class="text-muted small mb-2">Hustle Heros</p>
+              <p class="small text-muted mb-3">
+                Runs a printing business, Marynit Printing Enterprise that handles research work, publishing, 
+                and printing services. She also leads the Hustle heros team for Asaba vendors.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <!-- <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#teamModal" data-member="emeka" aria-label="View full profile for Emeka">View profile</button>
+                <div class="social-links">
+                  <a href="https://www.linkedin.com/in/emeka-udoh" class="text-muted ms-2" aria-label="Emeka on LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Advisory Circle -->
+    <!-- <section class="mb-5" data-aos="fade-up">
+      <h2 class="h5 mb-3">Advisory Circle</h2>
+      <p class="small text-muted">Seasoned advisors who provide strategic guidance on partnerships, procurement, and program evaluation.</p>
+
+      <ul class="list-unstyled">
+        <li class="mb-2">
+          <strong>Dr. Ifeanyi Onwuchekwa</strong> — Economist and SME advisor; supports impact measurement and economic inclusion strategy.
+        </li>
+        <li class="mb-2">
+          <strong>Mrs. Grace Eze</strong> — Community leader and longtime market organizer; advisor on local vendor engagement.
+        </li>
+        <li class="mb-2">
+          <strong>Mr. Peter Okonkwo</strong> — Procurement specialist with experience in institutional buying and supply chain linkages.
+        </li>
+        <li class="mb-2">
+          <strong>Ms. Adaobi Nwankwo</strong> — Microfinance advisor; assists on microgrant design and partner selection.
+        </li>
+      </ul>
+    </section> -->
+
+    <!-- Volunteers -->
+    <!-- <section class="mb-5" data-aos="fade-up">
+      <h2 class="h5 mb-3">Volunteers & Community Organizers</h2>
+      <p class="small text-muted">Volunteers support event setup, vendor registration, and outreach. We welcome people with local market knowledge and event experience.</p>
+
+      <div class="row row-cols-2 row-cols-md-4 g-3 mt-3">
+        <div class="col">
+          <div class="card border-0 shadow-sm p-2 text-center">
+            <img src="/assets/img/team/volunteers/vol-01.jpg" alt="Volunteer Ngozi" class="rounded-circle mx-auto d-block" width="72" height="72" loading="lazy">
+            <div class="mt-2 small">Ngozi — Vendor registration</div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card border-0 shadow-sm p-2 text-center">
+            <img src="/assets/img/team/volunteers/vol-02.jpg" alt="Volunteer Musa" class="rounded-circle mx-auto d-block" width="72" height="72" loading="lazy">
+            <div class="mt-2 small">Musa — Logistics</div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card border-0 shadow-sm p-2 text-center">
+            <img src="/assets/img/team/volunteers/vol-03.jpg" alt="Volunteer Ife" class="rounded-circle mx-auto d-block" width="72" height="72" loading="lazy">
+            <div class="mt-2 small">Ife — Communications</div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card border-0 shadow-sm p-2 text-center">
+            <img src="/assets/img/team/volunteers/vol-04.jpg" alt="Volunteer Tunde" class="rounded-circle mx-auto d-block" width="72" height="72" loading="lazy">
+            <div class="mt-2 small">Tunde — Venue setup</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-3">
+        <a class="btn btn-outline-primary btn-sm" href="/contact.html?type=volunteer">Sign up to volunteer</a>
+      </div> 
+    </section> -->
+
+    <!-- Culture, values, code of conduct -->
+    <section class="mb-5" data-aos="fade-up">
+      <h2 class="h5 mb-3">Our culture & code of conduct</h2>
+      <p class="small text-muted">We are committed to respectful collaboration, accountability, and fair opportunity. Vendors and partners are expected to follow our vendor code of conduct designed to ensure safety, transparency, and equitable access.</p>
+      <ul class="small text-muted">
+        <li>Respectful behaviour towards vendors, customers, and staff.</li>
+        <li>Transparent pricing and clear stall accountability.</li>
+        <li>Safety and cleanliness in all event spaces.</li>
+        <li>Non-discrimination and inclusion in vendor selection and participation.</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <!-- CTA / Partner / Sponsor -->
+    <section class="py-5 text-center" data-aos="fade-up">
+      <div class="card border-0 shadow-sm mx-auto p-4"
+      style="max-width:820px; background: #bdc3c7;  /* fallback for old browsers */
+          background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+          background: linear-gradient(to top, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */"
+      >
+        <h3 class="h5 mb-2 text-light">Partner with us or join as a vendor</h3>
+        <h5 class="small text-light mb-3">
+          Join us today and start your journey towards greater achievements. 
+          Your business deserves the best, let’s make it happen together!
+        </h5>
+        <div class="d-flex justify-content-center gap-2">
+          <a class="btn btn-primary js-purchase-btn" data-purchase-url="#" role="button">Join Us Now</a>
+          <a class="btn btn-outline-light" href="mailto:adaonwubiko@asababusinesscommunity.com?subject=Sponsor%20an%20event%20in%20Asaba">Sponsor an event</a>
+        </div>
+      </div>
+    </section>
+
+  <!-- Team modal (single modal to render any full profile) -->
+  <!-- <div class="modal fade" id="teamModal" tabindex="-1" aria-labelledby="teamModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 id="teamModalLabel" class="modal-title">Team member</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close profile"></button>
+        </div>
+        <div class="modal-body">
+          <div id="teamModalContent">
+            <p class="small text-muted">Loading profile...</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a class="btn btn-primary js-purchase-btn" data-purchase-url="#" role="button">Join / Get a stall</a>
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+   <!-- Footer (same as index) -->
+   <footer class="bg-white border-top mt-5">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <a href="./index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+            <img src="./assets/img/logo/abc-logo.png" alt="Asaba Business Community logo" width="40" height="40" loading="lazy">
+            <span class="fw-bold">Asaba Business Community</span>
+          </a>
+          <p class="small text-muted mt-2">Supporting small businesses in Asaba through markets, training, and partnerships since 2021.</p>
+          <p class="small text-muted mb-0">Address: Asaba, Delta State, Nigeria, West Africa.</p>
+          <p class="small text-muted">Phone: <a href="tel:+2349071419508">+234 907 141 9508</a></p>
+        </div>
+
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase small">Quick links</h6>
+          <ul class="list-unstyled small">
+            <li><a href="./about.html" class="text-decoration-none">About</a></li>
+            <li><a href="./events.html" class="text-decoration-none">Events</a></li>
+            <li><a href="./projects.html" class="text-decoration-none">Projects</a></li>
+            <li><a href="./team.html" class="text-decoration-none">Team</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <h6 class="text-uppercase small">Contact</h6>
+          <p class="small mb-1">Email: <a href="mailto:adaonwubiko@asababusinesscommunity.com">info@asababusinesscommunity.com</a></p>
+          <p class="small">Office hours: Mon–Sun, 9am–5pm</p>
+          <div class="d-flex gap-2 mt-2">
+            <a class="btn btn-outline-dark btn-sm" href="https://web.facebook.com/asababusiness1?mibextid=ZbWKwL&_rdc=1&_rdr" aria-label="Follow us on Facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a class="btn btn-outline-dark btn-sm" href="https://www.youtube.com/@asababusinesscommunity3445?si=x8nm39pqfY73vUrM" aria-label="Follow us on Youtube" target="_blank"><i class="bi bi-youtube"></i></a>
+            <a class="btn btn-outline-dark btn-sm" href="https://www.instagram.com/asababusiness/" aria-label="Follow us on instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a class="btn btn-outline-dark btn-sm" href="https://whatsapp.com" aria-label="Chat Us on Whatsapp" target="_blank"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <h6 class="text-uppercase small">Loaction</h6>
+          <p class="small text-muted">Asaba, Delta State, Nigeria.</p>
+          <iframe title="Asaba Business Community location map" 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d507864.6896927716!2d6.4721804!3d6.0368148!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104392b2b061bd39%3A0x749611dbcabe9489!2sAsaba%2C%20Delta!5e0!3m2!1sen!2sng!4v1725130329047!5m2!1sen!2sng" 
+            width="100%" 
+            height="140" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="border-top pt-3 mt-3 d-flex justify-content-between small">
+        <div>&copy; <span id="current-year"></span> Asaba Business Community — All rights reserved.</div>
+        <div><a href="./privacy.html" class="text-decoration-none">Privacy</a> · <a href="./terms.html" class="text-decoration-none">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="backToTop" class="btn btn-primary btn-lg rounded-circle" aria-label="Back to top" style="display:none;position:fixed;right:1rem;bottom:1rem;z-index:999;">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- JS dependencies (deferred) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.0/dist/gsap.min.js" defer></script>
+
+  <!-- Main site JS (initializes AOS/GSAP, glightbox, nav behavior, purchase CTA wiring) -->
+  <script src="./assets/js/main.js" defer></script>
+
+  <!-- Inline JS: modal content map & small accessibility helpers (runs after DOMContentLoaded) -->
+  <!-- <script>
+    // Set current year immediately for paint
+    document.getElementById('current-year-team').textContent = new Date().getFullYear();
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Map of full bios for modal — concise but specific, replace or expand as desired.
+      const teamBios = {
+        chinyere: {
+          name: 'Chinyere Okafor',
+          title: 'Founder & Executive Director',
+          bio: `<p class="small text-muted mb-2">Chinyere founded Asaba Business Community in 2021 after 10 years coordinating market programs across Delta State. She leads strategy, partner relations, and program oversight.</p>
+                <p class="small text-muted mb-0"><strong>Notable:</strong> Led the 2024 Vendor Expo, which hosted 180 vendors and over 3,000 visitors; designed ABC's vendor code of conduct and onboarding process.</p>`
+        },
+        emeka: {
+          name: 'Emeka Udoh',
+          title: 'Programs Director',
+          bio: `<p class="small text-muted mb-2">Emeka designs and delivers ABC's training and events programs. He oversees curriculum, logistics, and vendor support services.</p>
+                <p class="small text-muted mb-0"><strong>Impact:</strong> Managed training delivery for 320 vendors with a 60% adoption rate of key practices taught.</p>`
+        },
+        ngozi: {
+          name: 'Ngozi Mensah',
+          title: 'Partnerships Director',
+          bio: `<p class="small text-muted mb-2">Ngozi builds strategic partnerships with government bodies, NGOs, and financial institutions to unlock resources for vendors.</p>
+                <p class="small text-muted mb-0"><strong>Recent:</strong> Negotiated a pilot micro-grant program and ongoing procurement introductions with local institutions.</p>`
+        },
+        ifeoma: {
+          name: 'Ifeoma Eze',
+          title: 'Operations Manager',
+          bio: `<p class="small text-muted mb-2">Ifeoma handles on-the-ground logistics, vendor onboarding, and compliance for events. She ensures venues, permits, and vendor flows are organized.</p>
+                <p class="small text-muted mb-0"><strong>Strength:</strong> Operational execution and vendor support coordination.</p>`
+        },
+        nnamdi: {
+          name: 'Nnamdi Okocha',
+          title: 'Finance Manager',
+          bio: `<p class="small text-muted mb-2">Nnamdi manages bookkeeping, budgets, and grant disbursements. He produces transparent reports for partners and funders.</p>
+                <p class="small text-muted mb-0"><strong>Responsibility:</strong> Micro-grant administration and financial compliance.</p>`
+        },
+        boma: {
+          name: 'Boma Adebayo',
+          title: 'Communications Lead',
+          bio: `<p class="small text-muted mb-2">Boma leads storytelling, media relations, and social outreach to amplify vendor successes and event awareness.</p>
+                <p class="small text-muted mb-0"><strong>Speciality:</strong> Content strategy and community engagement.</p>`
+        }
+      };
+
+      // Fill modal on show
+      const modalEl = document.getElementById('teamModal');
+      modalEl && modalEl.addEventListener('show.bs.modal', function (event) {
+        const trigger = event.relatedTarget;
+        const key = trigger && trigger.getAttribute('data-member') ? trigger.getAttribute('data-member') : null;
+        const contentEl = document.getElementById('teamModalContent');
+        const titleEl = document.getElementById('teamModalLabel');
+
+        if (!key || !teamBios[key]) {
+          titleEl.textContent = 'Team member';
+          contentEl.innerHTML = '<p class="small text-muted">Profile not found.</p>';
+          return;
+        }
+
+        const member = teamBios[key];
+        titleEl.textContent = member.name + ' — ' + member.title;
+        contentEl.innerHTML = member.bio;
+      });
+
+      // Keyboard: focus trap is handled by Bootstrap modal. Ensure buttons are accessible.
+    });
+  </script> -->
+</body>
+</html>

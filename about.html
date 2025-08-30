@@ -1,0 +1,453 @@
+<!--
+  /about.html
+  Purpose: Full "About" page for Asaba Business Community (ABC).
+  Notes:
+    - Consistent header/footer with index.html.
+    - Uses semantic sections, timeline, mission/vision, approach, SDG alignment, and CTAs.
+    - Primary CTA buttons use class "js-purchase-btn" to be wired by main.js.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Asaba Business Community</title>
+  <meta name="description" content="About Asaba Business Community — mission, story, milestones (2021–2025), and how we support MSMEs in Asaba with events, training, and market access." />
+
+  <!-- Google Fonts preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS & GLightbox CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+
+  <!-- Organization JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Asaba Business Community",
+    "url": "https://asababusinesscommunity.com",
+    "logo": "https://asababusinesscommunity.com/assets/img/logo/abc-logo.png",
+    "sameAs": [
+      "https://web.facebook.com/asababusiness1?mibextid=ZbWKwL&_rdc=1&_rdr",
+      "https://www.youtube.com/@asababusinesscommunity3445?si=x8nm39pqfY73vUrM",
+      "https://www.instagram.com/asababusiness/"
+    ],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+234-907-141-9508",
+        "contactType": "customer service",
+        "areaServed": "NG"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Theme favicons -->
+  <link rel="icon" href="./assets/img/logo/favicon.svg" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+
+
+</head>
+<body class="bg-light">
+
+  <!-- Skip to content -->
+  <!-- <a class="visually-hidden-focusable skip-link" href="#main">Skip to content</a> -->
+
+  <!-- Header / Navbar -->
+  <header class="sticky-top shadow-sm bg-white">
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-light container" aria-label="Primary navigation">
+      <div class="container-fluid px-0">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="./index.html">
+          <img src="./assets/img/logo/abc-logo.png" alt="Asaba Business Community logo" width="40" height="40" loading="lazy">
+          <span class="fw-bold">Asaba Business Community</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navCollapse">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="./index.html#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="./about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="./events.html">Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="./projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="./team.html">Team</a></li>
+            <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+            <li class="nav-item ms-3">
+              <a class="btn btn-primary btn-sm js-purchase-btn" role="button" data-purchase-url="#" aria-label="Join or buy a stall">Join Us Now</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="container my-5">
+    <section class="py-4" aria-labelledby="about-hero">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7" data-aos="fade-right">
+          <h1 id="about-hero" class="display-6 lh-1 mb-3">Our story: Building a Marketplace, Together</h1>
+          <p class="lead text-muted">
+            Asaba Business Community was established by Ada Onwubiko in 2020 
+            with the mission of empowering local businesses by providing opportunities to increase sales, 
+            build valuable connections, and collaborate effectively.
+          </p>
+          <p class="small text-muted"> 
+            Our platform is designed to help you get referrals and close deals without the need to personally know anyone in Asaba, Nigeria.
+            Since our inception, we've evolved into a dynamic organization, now supported by a talented team of six members, each bringing unique skills to the table. We've grown to become a key resource for up to 1,000 business owners in Asaba, offering a strong network that fosters growth and success.
+            regularly host physical events, with some attracting over 400 entrepreneurs in one setting, 
+            providing unmatched opportunities for networking and business development. 
+            Asaba Business Community is your one-stop hub for accessing business opportunities and making meaningful connections in the city of Asaba.
+          </p>
+          <p class="small text-muted">
+            We believe sustainable local economies start with strong, connected small businesses. 
+            From a monthly market day to a full-scale vendor expo and structured training series
+             — our programs are built around measurable outcomes for members.
+          </p>
+
+          <div class="mt-4">
+            <a class="btn btn-lg btn-primary js-purchase-btn" role="button" data-purchase-url="#" aria-label="Join Asaba Business Community">Join Us Now</a>
+            <a class="btn btn-outline-secondary" href="mailto:adaonwubiko@asababusinesscommunity.com?subject=Sponsor%20an%20event%20in%20Asaba" role="button">Sponsor an event</a>
+          </div>
+        </div>
+
+        <div class="col-lg-5" data-aos="fade-left">
+          <figure class="ratio ratio-4x3 rounded-3 overflow-hidden shadow-sm">
+            <img src="./assets/img/events/2022/ev-02.webp" alt="Community leaders and vendors at an Asaba Business Community planning session" class="img-fluid object-cover" loading="lazy" width="800" height="600">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission / Vision / Objectives -->
+    <section class="py-4" aria-labelledby="mission-heading">
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up">
+          <h3 id="mission-heading" class="h5">Our mission</h3>
+          <p class="small text-muted">
+            We've grown to become a key resource for up to 1,000 business owners in Asaba
+            Our mission is to empower small businesses in Asaba with market access, 
+            practical skills, and trusted partnerships so they can grow resilient, profitable enterprises.
+          </p>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="50">
+          <h3 class="h5">Our vision</h3>
+          <p class="small text-muted">
+            Our vision is to build a thriving business ecosystem that empowers our members to compete globally, 
+            reduce poverty, and achieve their full potential.
+          </p>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="h5">Objectives</h3>
+          <ul class="small text-muted mb-0">
+            <li>Host regular markets and an annual expo to increase sales opportunities.</li>
+            <li>Deliver targeted training for business basics and digital payments.</li>
+            <li>Connect vendors to bulk buyers and procurement opportunities.</li>
+            
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Approach -->
+    <section class="py-4" aria-labelledby="approach-heading">
+      <h2 id="approach-heading" class="h5 mb-3" data-aos="fade-up">How we work</h2>
+      <div class="row g-4 align-items-center">
+        <div class="col-md-7" data-aos="fade-up">
+          <p class="small text-muted">Our approach is practical and outcome-driven. We focus on three pillars:</p>
+          <ol class="small text-muted">
+            <li>
+              <strong>
+                Accessible Markets:
+              </strong>
+              An annual vendor expo where vetted vendors meet paying customers and institutional buyers.
+            </li>
+            <li>
+              <strong>
+                Practical Training:
+            </strong> 
+              Short, hands-on workshops on pricing, merchandising, digital payments, and basic bookkeeping — 
+              built for action, not theory.
+            </li>
+          </ol>
+        </div>
+
+        <div class="col-md-5" data-aos="fade-up" data-aos-delay="50">
+          <div class="card border-0 shadow-sm p-3">
+            <h3 class="h6 mb-2">Membership benefits</h3>
+            <ul class="small text-muted mb-0">
+              <li>Priority stall booking for markets and the annual expo.</li>
+              <li>Access to business clinics and mentorship sessions.</li>
+              <li>Featured vendor listings for buyers and partners.</li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline 2021-2025 -->
+    <section class="py-5" aria-labelledby="timeline-heading">
+      <h2 id="timeline-heading" class="h5 mb-3" data-aos="fade-up">Milestones: 2021 — 2025</h2>
+
+      <div class="timeline">
+        <!-- Timeline entry 2021 -->
+        <article class="timeline-item d-flex gap-3 mb-4" data-aos="fade-up">
+          <div class="timeline-year fw-bold text-primary" aria-hidden="true">2021</div>
+          <div>
+            <h3 class="h6 mb-1">Asaba Business Vendors Hangout 1.0</h3>
+            <p class="small text-muted mb-0">
+              In 2021, we hosted a significant event where 150 business owners came together for our special hangout.
+              This gathering was designed to foster connections, encourage collaboration, and provide ample networking 
+              opportunities among entrepreneurs in the city of Asaba. The event was a resounding success, offering a 
+              platform for participants to share ideas, explore potential partnerships, and build relationships that 
+              could propel their businesses forward. It was more than just a networking event;
+              it was a space where local business owners could engage in meaningful discussions, 
+              exchange valuable insights, and strengthen the sense of community within the Asaba business landscape.
+            </p>
+          </div>
+        </article>
+
+        <!-- 2022 -->
+        <article class="timeline-item d-flex gap-3 mb-4" data-aos="fade-up">
+          <div class="timeline-year fw-bold text-primary" aria-hidden="true">2022</div>
+          <div>
+            <h3 class="h6 mb-1">Asaba Business Vendors Hangout 2.0</h3>
+            <p class="small text-muted mb-0">
+              In 2022, we took our efforts to the next level by expanding our reach and hosting an even larger event with 
+              300 business owners in attendance. This event not only provided a platform for networking, collaboration, 
+              and business growth but also recognized excellence within our community.We proudly awarded several vendors 
+              who had excelled in their respective fields, celebrating their achievements and contributions to the Asaba business ecosystem. 
+              These awards were a testament to the hard work and dedication of our members, highlighting the remarkable talent and innovation 
+              within our community. The event was a milestone in our journey, reinforcing our commitment to supporting and elevating local businesses.
+              It was more than just a networking event; it was a space where local business owners could engage in meaningful discussions, 
+              exchange valuable insights, and strengthen the sense of community within the Asaba business landscape. 
+            </p>
+          </div>
+        </article>
+
+        <!-- 2023 -->
+        <article class="timeline-item d-flex gap-3 mb-4" data-aos="fade-up">
+          <div class="timeline-year fw-bold text-primary" aria-hidden="true">2023</div>
+          <div>
+            <h3 class="h6 mb-1">Asaba Business Vendors Hangout 3.0</h3>
+            <p class="small text-muted mb-0">
+              In 2023, we continued our growth trajectory by hosting our largest event yet, bringing together 356 
+              vendors for an incredible day of connection, collaboration, and celebration. This event was not just about 
+              networking; it was a dynamic space where business owners could forge new partnerships, exchange ideas, 
+              and explore opportunities for mutual growth. In recognition of the dedication and hard work of our members, 
+              we once again took the time to honor those who had made significant strides in their industries. 
+              Awards were presented to outstanding vendors who had demonstrated exceptional performance and innovation 
+              in their fields. This recognition was a testament to the thriving entrepreneurial spirit within our community 
+              and reinforced our mission to support and uplift local businesses in Asaba. 
+              The 2023 event solidified our reputation as a cornerstone of business networking and development in the region, 
+              furthering our commitment to helping local entrepreneurs succeed.
+            </p>
+          </div>
+        </article>
+
+        <!-- 2024 -->
+        <article class="timeline-item d-flex gap-3 mb-4" data-aos="fade-up">
+          <div class="timeline-year fw-bold text-primary" aria-hidden="true">2024</div>
+          <div>
+            <h3 class="h6 mb-1">Asaba Business Vendors Hangout 4.0</h3>
+            <p class="small text-muted mb-0">
+              In 2024, we took a big step forward by seeking partnerships and sponsorships to further support our community. 
+              We were thrilled to partner with well-known brands like Pancake Nigeria, Amadiva Bridals, BD Photons, 
+              Freshstart Interior Academy, IkeBest Technology, Grill House, Kidessence Kiddies Store, and Korrect Logistics.
+              This year’s event was our largest yet, bringing together 400 business owners for a day of networking, 
+              collaboration, and celebration. One of the highlights was our business pitch competition, where three businesses 
+              that excelled in their presentations were awarded funds to help grow their ventures. We also recognized and 
+              rewarded the Entrepreneurs of the Year, honoring those who had shown exceptional innovation and consistent 
+              success throughout the previous year.    
+            </p>
+          </div>
+        </article>
+
+        <!-- 2025 -->
+        <article class="timeline-item d-flex gap-3 mb-4" data-aos="fade-up">
+          <div class="timeline-year fw-bold text-primary" aria-hidden="true">2025</div>
+          <div>
+            <h3 class="h6 mb-1">Asaba Business Vendors Hangout 5.0</h3>
+            <p class="small text-muted mb-0">
+              In 2025, the Business Culture Fest took on a whole new dimension. This year’s edition beautifully infused the richness of Nigerian culture, with vibrant traditional attires from different regions showcasing our heritage while we celebrated the visionaries shaping the Nigerian business landscape.
+              We honored the spirit of enterprise through our symbolic “tribes” — 
+              <strong class="text-secondary-emphasis" style="font-size: 15px;">
+                Dangote
+              </strong>, 
+              <strong class="text-secondary-emphasis" style="font-size: 15px;">
+                Otedola
+              </strong>, 
+              <strong class="text-secondary-emphasis" style="font-size: 15px;">
+                Elumelu
+              </strong>
+               and 
+              <strong class="text-secondary-emphasis" style="font-size: 15px;">
+                Cubana
+              </strong>
+               — representing the strength, resilience, and innovation that define Nigerian business excellence.
+            </p>
+                      <p class="small text-muted">
+                        The night also belonged to remarkable entrepreneurs who continue to inspire and redefine success:
+                          <ul class="small text-muted">
+                            <li>GGLITZ Brand — Entrepreneur of the Year</li>
+                            <li>Bloomwoman Fashion Store — Entrepreneur of the Year</li>
+                            <li>Lady B Fabrics — Entrepreneur of the Year</li>
+                            <li>Stragib Integrated Ventures — Entrepreneur of the Year</li>
+                            <li>NK Foods — Resilience Champion</li>
+                            <li>Scent by Mildred Perfume — Trailblazer of the Year and Overall Business of the Year</li>
+                            <li>Lady B Fabrics — Entrepreneur of the Year</li>
+                          </ul>
+                        </p>
+                      <p class="small text-muted">
+                        It was more than an event — it was a powerful statement of culture, resilience, and entrepreneurial brilliance. Business Culture Fest 2025 reminded us that when business meets culture, the result is unforgettable.
+                      </p>
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SDG Alignment
+    <section class="py-4" aria-labelledby="sdg-heading">
+      <h2 id="sdg-heading" class="h5 mb-3" data-aos="fade-up">Our contribution to sustainable development</h2>
+      <p class="small text-muted" data-aos="fade-up" data-aos-delay="50">Our work aligns with several Sustainable Development Goals by creating decent work, supporting small businesses, and promoting inclusive economic growth.</p>
+
+      <div class="row g-3">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card border-0 shadow-sm p-3">
+            <h3 class="h6">SDG 8: Decent Work & Economic Growth</h3>
+            <p class="small text-muted mb-0">By facilitating market access and training, we help create more stable income opportunities for micro and small business owners.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+          <div class="card border-0 shadow-sm p-3">
+            <h3 class="h6">SDG 1: No Poverty</h3>
+            <p class="small text-muted mb-0">Micro-grants and vendor connections aim to lift participating households above the poverty line through sustainable entrepreneurship.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card border-0 shadow-sm p-3">
+            <h3 class="h6">SDG 5: Gender Equality</h3>
+            <p class="small text-muted mb-0">We prioritize female-led businesses in our programs, with tailored workshops and mentorship to address gender-specific barriers.</p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- CTA / Partner / Sponsor -->
+    <section class="py-5 text-center" data-aos="fade-up">
+      <div class="card border-0 shadow-sm mx-auto p-4"
+      style="max-width:820px; background: #bdc3c7;  /* fallback for old browsers */
+          background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+          background: linear-gradient(to top, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */"
+      >
+        <h3 class="h5 mb-2 text-light">Partner with us or join as a vendor</h3>
+        <h5 class="small text-light mb-3">
+          Join us today and start your journey towards greater achievements. 
+          Your business deserves the best, let’s make it happen together!
+        </h5>
+        <div class="d-flex justify-content-center gap-2">
+          <a class="btn btn-primary js-purchase-btn" data-purchase-url="#" role="button">Join Us Now</a>
+          <a class="btn btn-outline-light" href="mailto:adaonwubiko@asababusinesscommunity.com?subject=Sponsor%20an%20event%20in%20Asaba">Sponsor an event</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer (same as index) -->
+   <footer class="bg-white border-top mt-5">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <a href="./index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+            <img src="./assets/img/logo/abc-logo.png" alt="Asaba Business Community logo" width="40" height="40" loading="lazy">
+            <span class="fw-bold">Asaba Business Community</span>
+          </a>
+          <p class="small text-muted mt-2">Supporting small businesses in Asaba through markets, training, and partnerships since 2021.</p>
+          <p class="small text-muted mb-0">Address: Asaba, Delta State, Nigeria, West Africa.</p>
+          <p class="small text-muted">Phone: <a href="tel:+2349071419508">+234 907 141 9508</a></p>
+        </div>
+
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase small">Quick links</h6>
+          <ul class="list-unstyled small">
+            <li><a href="./about.html" class="text-decoration-none">About</a></li>
+            <li><a href="./events.html" class="text-decoration-none">Events</a></li>
+            <li><a href="./projects.html" class="text-decoration-none">Projects</a></li>
+            <li><a href="./team.html" class="text-decoration-none">Team</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <h6 class="text-uppercase small">Contact</h6>
+          <p class="small mb-1">Email: <a href="mailto:adaonwubiko@asababusinesscommunity.com">info@asababusinesscommunity.com</a></p>
+          <p class="small">Office hours: Mon–Sun, 9am–5pm</p>
+          <div class="d-flex gap-2 mt-2">
+            <a class="btn btn-outline-dark btn-sm" href="https://web.facebook.com/asababusiness1?mibextid=ZbWKwL&_rdc=1&_rdr" aria-label="Follow us on Facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a class="btn btn-outline-dark btn-sm" href="https://www.youtube.com/@asababusinesscommunity3445?si=x8nm39pqfY73vUrM" aria-label="Follow us on Youtube" target="_blank"><i class="bi bi-youtube"></i></a>
+            <a class="btn btn-outline-dark btn-sm" href="https://www.instagram.com/asababusiness/" aria-label="Follow us on instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a class="btn btn-outline-dark btn-sm" href="https://whatsapp.com" aria-label="Chat Us on Whatsapp" target="_blank"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <h6 class="text-uppercase small">Loaction</h6>
+          <p class="small text-muted">Asaba, Delta State, Nigeria.</p>
+          <iframe title="Asaba Business Community location map" 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d507864.6896927716!2d6.4721804!3d6.0368148!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104392b2b061bd39%3A0x749611dbcabe9489!2sAsaba%2C%20Delta!5e0!3m2!1sen!2sng!4v1725130329047!5m2!1sen!2sng" 
+            width="100%" 
+            height="140" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="border-top pt-3 mt-3 d-flex justify-content-between small">
+        <div>&copy; <span id="current-year"></span> Asaba Business Community — All rights reserved.</div>
+        <div><a href="./privacy.html" class="text-decoration-none">Privacy</a> · <a href="./terms.html" class="text-decoration-none">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="backToTop" class="btn btn-primary btn-lg rounded-circle" aria-label="Back to top" style="display:none;position:fixed;right:1rem;bottom:1rem;z-index:999;">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- JS dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js" defer></script>
+  <script src="./assets/js/main.js" defer></script>
+  <script>
+    document.getElementById('current-year-footer').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "Asaba Business Community",
+  "short_name": "ABC Asaba",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b4a6f",
+  "description": "Supporting MSMEs in Asaba with markets, training, and partnerships.",
+  "icons": [
+    {
+      "src": "/favicon/site-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon/site-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

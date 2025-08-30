@@ -1,0 +1,312 @@
+<!--
+  /privacy.html
+  Purpose: Privacy Policy for Asaba Business Community (ABC).
+  Notes:
+    - Mobile-first, accessible page matching site header/footer and styles.
+    - Primary CTA buttons use class "js-purchase-btn" (wired by /assets/js/main.js).
+    - Contains clear instructions for data subject rights, retention, cookies, third-party services, and contact for the Data Protection Officer.
+    - Last updated: 2025-08-28
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Privacy — Asaba Business Community</title>
+  <meta name="description" content="Privacy - Asaba Business Community — User Privacy" />
+
+  <!-- Google Fonts preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS & GLightbox CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+
+  <!-- Organization JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Asaba Business Community",
+    "url": "https://asababusinesscommunity.com",
+    "logo": "https://asababusinesscommunity.com/assets/img/logo/abc-logo.png",
+    "sameAs": [
+      "https://web.facebook.com/asababusiness1?mibextid=ZbWKwL&_rdc=1&_rdr",
+      "https://www.youtube.com/@asababusinesscommunity3445?si=x8nm39pqfY73vUrM",
+      "https://www.instagram.com/asababusiness/"
+    ],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+234-907-141-9508",
+        "contactType": "customer service",
+        "areaServed": "NG"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Theme favicons -->
+  <link rel="icon" href="./assets/img/logo/favicon.svg" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+
+
+</head>
+<body class="bg-light">
+
+  <!-- Skip to content -->
+  <!-- <a class="visually-hidden-focusable skip-link" href="#main">Skip to content</a> -->
+
+  <!-- Header / Navbar -->
+  <header class="sticky-top shadow-sm bg-white">
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-light container" aria-label="Primary navigation">
+      <div class="container-fluid px-0">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="./index.html">
+          <img src="./assets/img/logo/abc-logo.png" alt="Asaba Business Community logo" width="40" height="40" loading="lazy">
+          <span class="fw-bold">Asaba Business Community</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navCollapse">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="./index.html#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="./events.html">Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="./projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="./team.html">Team</a></li>
+            <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+            <li class="nav-item ms-3">
+              <a class="btn btn-primary btn-sm js-purchase-btn" role="button" data-purchase-url="#" aria-label="Join or buy a stall">Join Us Now</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="container my-5">
+    <header class="mb-4" data-aos="fade-up">
+      <h1 class="display-6 lh-1">Privacy Policy</h1>
+      <p class="small text-muted">Last updated: <strong>28 August 2025</strong></p>
+      <p class="lead text-muted">This Privacy Policy explains how Asaba Business Community ("ABC", "we", "us") collects, uses, shares and protects personal information for our members, vendors, partners, and site visitors.</p>
+    </header>
+
+    <!-- Summary -->
+    <section class="mb-4" data-aos="fade-up">
+      <h2 class="h5">Quick summary</h2>
+      <ul class="small text-muted">
+        <li>We collect contact and business information when you register, book a stall, sign up to the newsletter, or contact us.</li>
+        <li>We use data to provide services, process stall bookings, send transactional and marketing communications (with consent), and to improve our events and programs.</li>
+        <li>We keep contact records for service and legal purposes; retention periods vary by purpose — see the "Retention" section below.</li>
+        <li>If you have questions or want to exercise your rights, contact <a href="mailto:adaonwubiko@asababusinesscommunity.com">privacy@asababusinesscommunity.com</a> or <a href="mailto:adaonwubiko@asababusinesscommunity.com">info@asababusinesscommunity.com</a>.</li>
+      </ul>
+    </section>
+
+    <!-- What we collect -->
+    <section class="mb-4" data-aos="fade-up">
+      <h2 class="h5">1) What personal data we collect</h2>
+      <p class="small text-muted">We collect data that you provide directly and information collected automatically by the site and third-party services.</p>
+
+      <ul class="small text-muted">
+        <li><strong>Identity & contact:</strong> name, business name, email, phone, postal address.</li>
+        <li><strong>Transaction:</strong> stall bookings, invoices, payment confirmations, receipts.</li>
+        <li><strong>Communications:</strong> messages, support requests, newsletter subscriptions and preferences.</li>
+        <li><strong>Event participation:</strong> images taken at events (used for promotion where consent applies), registration details, dietary or accessibility needs you share.</li>
+        <li><strong>Technical:</strong> IP address, device/browser details, analytics data (pages visited, referrers), and cookies.</li>
+      </ul>
+    </section>
+
+    <!-- How we use -->
+    <section class="mb-4" data-aos="fade-up">
+      <h2 class="h5">2) How we use your information</h2>
+      <p class="small text-muted">We use personal data for the following purposes:</p>
+      <ul class="small text-muted">
+        <li><strong>Service provision:</strong> process bookings, manage memberships, run events, issue invoices and receipts.</li>
+        <li><strong>Communications:</strong> respond to inquiries, send transactional emails (booking confirmations, reminders), and notify about account activity.</li>
+        <li><strong>Marketing (with consent):</strong> news, event invites, partner offers — you can opt out at any time.</li>
+        <li><strong>Improvement:</strong> analyze site use and event effectiveness to improve programs and user experience.</li>
+        <li><strong>Legal & safety:</strong> prevent fraud, comply with laws and regulatory obligations, and enforce our Terms.</li>
+      </ul>
+    </section>
+
+    <!-- Legal basis & NDPR -->
+    <section class="mb-4" data-aos="fade-up">
+      <h2 class="h5">3) Legal basis & compliance</h2>
+      <p class="small text-muted">Where applicable, we rely on one or more legal bases to process personal data:</p>
+      <ul class="small text-muted">
+        <li><strong>Contractual necessity:</strong> to perform obligations when you purchase a stall, book a service, or become a member.</li>
+        <li><strong>Consent:</strong> for marketing communications, photographs used for promotion, and some optional features.</li>
+        <li><strong>Legitimate interests:</strong> for site security, fraud prevention, and improving our services — balancing your privacy rights.</li>
+        <li><strong>Legal obligations:</strong> to comply with accounting, tax or other regulatory requirements.</li>
+      </ul>
+      <p class="small text-muted">We aim to align our practices with the Nigeria Data Protection Regulation (NDPR) and applicable privacy law. If you have questions about legal compliance, contact our Data Protection Officer (DPO) at <a href="mailto:privacy@asababusinesscommunity.com">privacy@asababusinesscommunity.com</a>.</p>
+    </section>
+
+    <!-- Cookies -->
+    <section class="mb-4" data-aos="fade-up">
+      <h2 class="h5">4) Cookies & similar technologies</h2>
+      <p class="small text-muted">We use cookies and similar technologies to operate the site and improve your experience. Types of cookies we use:</p>
+      <ul class="small text-muted">
+        <li><strong>Essential:</strong> required for the site to function (session, security).</li>
+        <li><strong>Performance & analytics:</strong> (e.g., Google Analytics) to measure site usage and improve services.</li>
+        <li><strong>Functional:</strong> remember preferences (e.g., language or form state).</li>
+        <li><strong>Marketing:</strong> used by partners to deliver relevant adverts (we seek consent where required).</li>
+      </ul>
+      <p class="small text-muted">You can manage cookies in your browser settings. Disabling cookies may limit certain features. For analytics opt-out, consult your browser or privacy tools.</p>
+    </section>
+
+    <!-- Third parties -->
+    <section class="mb-4" data-aos="fade-up">
+      <h2 class="h5">5) Third-party services</h2>
+      <p class="small text-muted">We use trusted third-party services to operate the site and our programs. Examples include:</p>
+      <ul class="small text-muted">
+        <li>Email delivery & forms: EmailJS, Formspree (for contact/newsletter) — update credentials in site config.</li>
+        <li>Maps: Google Maps embedded for location and directions.</li>
+        <li>Analytics & performance: Google Analytics, CDN providers for libraries (Bootstrap, GSAP, AOS).</li>
+        <li>Gallery/lightbox: GLightbox for image viewing (no video embeds by default).</li>
+      </ul>
+      <p class="small text-muted">These services may process data outside Nigeria. We select providers that maintain appropriate safeguards; where transfers occur, we require contractual safeguards to protect your data.</p>
+    </section>
+
+    <!-- Retention -->
+    <section class="mb-4" data-aos="fade-up">
+      <h2 class="h5">6) Data retention</h2>
+      <p class="small text-muted">We retain personal data only as long as needed for the purposes listed above or to meet legal obligations:</p>
+      <ul class="small text-muted">
+        <li>Contact/request records: typically retained for up to <strong>2 years</strong> after last contact for service and reporting purposes.</li>
+        <li>Membership & transaction records (invoices): retained for up to <strong>7 years</strong> for accounting and tax compliance.</li>
+        <li>Marketing consents: stored until withdrawn.</li>
+        <li>Event photos used for promotion: retained until consent is withdrawn or for up to 3 years; vendors or participants may request removal (see "Your rights").</li>
+      </ul>
+    </section>
+
+    <!-- Security -->
+    <section class="mb-4" data-aos="fade-up">
+      <h2 class="h5">7) Security</h2>
+      <p class="small text-muted">We take reasonable technical and organisational steps to protect personal data from loss, misuse, unauthorized access, disclosure, alteration, or destruction. Measures include encrypted connections (HTTPS), access controls, and secure hosting. However, no system is 100% secure — if you suspect a breach, contact <a href="mailto:privacy@asababusinesscommunity.com">privacy@asababusinesscommunity.com</a> immediately.</p>
+    </section>
+
+    <!-- Your rights -->
+    <section class="mb-4" data-aos="fade-up">
+      <h2 class="h5">8) Your rights</h2>
+      <p class="small text-muted">Depending on applicable law, you may have rights regarding your personal data. These commonly include:</p>
+      <ul class="small text-muted">
+        <li><strong>Access:</strong> request a copy of data we hold about you.</li>
+        <li><strong>Rectification:</strong> correct inaccurate or incomplete data.</li>
+        <li><strong>Erasure:</strong> request deletion where we have no lawful reason to retain it.</li>
+        <li><strong>Restriction:</strong> request limits on processing while a dispute is resolved.</li>
+        <li><strong>Object:</strong> object to direct marketing or processing based on legitimate interest.</li>
+        <li><strong>Data portability:</strong> where applicable, request your data in a structured, machine-readable format.</li>
+        <li><strong>Withdraw consent:</strong> withdraw consent for processing that was based solely on consent.</li>
+      </ul>
+      <p class="small text-muted">To exercise these rights, email <a href="mailto:adaonwubiko@asababusinesscommunity.com">privacy@asababusinesscommunity.com</a> or write to: Data Protection Officer, Asaba Business Community, 12 Ukpaba Road, Asaba, Delta State, Nigeria. We will respond promptly and in accordance with applicable law.</p>
+      <p class="small text-muted">If you remain unsatisfied, you may lodge a complaint with Nigeria's supervisory authority—National Information Technology Development Agency (NITDA) — or another competent regulator where applicable.</p>
+    </section>
+
+    <!-- Minors -->
+    <section class="mb-4" data-aos="fade-up">
+      <h2 class="h5">9) Children</h2>
+      <p class="small text-muted">Our services are intended for business owners and adults. We do not knowingly collect personal data from children under 13. If you believe a child under 13 has provided information, contact us so we can delete it.</p>
+    </section>
+
+    <!-- Changes -->
+    <section class="mb-4" data-aos="fade-up">
+      <h2 class="h5">10) Changes to this policy</h2>
+      <p class="small text-muted">We may update this policy to reflect changes in our practices or legal requirements. The "Last updated" date at the top indicates when this policy was last revised. We will notify users of material changes via our website or email where appropriate.</p>
+    </section>
+
+    <!-- Contact -->
+    <section class="mb-5" data-aos="fade-up">
+      <h2 class="h5">Contact & DPO</h2>
+      <p class="small text-muted">Questions or requests regarding data protection should be sent to:</p>
+      <address class="small text-muted">
+        Data Protection Officer (DPO)<br>
+        Asaba Business Community<br>
+        Asaba, Delta State, Nigeria<br>
+        Email: <a href="mailto:adaonwubiko@asababusinesscommunity.com">privacy@asababusinesscommunity.com</a><br>
+        General enquiries: <a href="mailto:adaonwubiko@asababusinesscommunity.com">info@asababusinesscommunity.com</a><br>
+        Phone: <a href="tel:+2349071419508">+234 907 141 9508</a>
+      </address>
+    </section>
+
+    <!-- CTA / Partner / Sponsor -->
+    <!-- <section class="py-5 text-center" data-aos="fade-up">
+      <div class="card border-0 shadow-sm mx-auto p-4"
+      style="max-width:820px; background: #bdc3c7;  /* fallback for old browsers */
+          background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+          background: linear-gradient(to top, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */"
+      >
+        <h3 class="h5 mb-2 text-light">Partner with us or join as a vendor</h3>
+        <h5 class="small text-light mb-3">
+          Join us today and start your journey towards greater achievements. 
+          Your business deserves the best, let’s make it happen together!
+        </h5>
+        <div class="d-flex justify-content-center gap-2">
+          <a class="btn btn-primary js-purchase-btn" data-purchase-url="#" role="button">Join Us Now</a>
+          <a class="btn btn-outline-light" href="mailto:adaonwubiko@asababusinesscommunity.com?subject=Sponsor%20an%20event%20in%20Asaba">Sponsor an event</a>
+        </div>
+      </div>
+    </section> -->
+
+  <!-- Footer (consistent) -->
+  <footer class="bg-white border-top mt-5">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <a href="./index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+            <img src="./assets/img/logo/abc-logo.png" alt="Asaba Business Community logo" width="40" height="40" loading="lazy">
+            <span class="fw-bold">Asaba Business Community</span>
+          </a>
+          <p class="small text-muted mt-2">Asaba, Delta State, Nigeria</p>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase small">Legal</h6>
+          <ul class="list-unstyled small">
+            <li><a href="./privacy.html">Privacy</a></li>
+            <li><a href="./terms.html">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase small">Contact</h6>
+          <p class="small mb-1">Email: <a href="mailto:adaonwubiko@asababusinesscommunity.com">info@asababusinesscommunity.com</a></p>
+          <p class="small">Phone: <a href="tel:+2349071419508">+234 907 141 9508</a></p>
+        </div>
+      </div>
+
+      <div class="border-top pt-3 mt-3 d-flex justify-content-between small">
+        <div>&copy; <span id="privacy-year"></span> Asaba Business Community — All rights reserved.</div>
+        <div>Designed for local MSMEs in Asaba</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="./assets/js/main.js" defer></script>
+
+  <script>
+    // Fill year & init AOS
+    document.getElementById('privacy-year').textContent = new Date().getFullYear();
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.AOS) AOS.init({ once: true, duration: 600 });
+    });
+  </script>
+</body>
+</html>

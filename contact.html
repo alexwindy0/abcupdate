@@ -1,0 +1,343 @@
+<!--
+  /contact.html
+  Purpose: Contact page with accessible contact form (client-side validation), FAQ, contact details and map.
+  Notes:
+    - Form id="contact-form" — validate.js expects this id and will handle EmailJS/Formspree integration.
+    - Form fields: name, email, phone, company, subject, message. Hidden field "ref" for query param prefill (e.g., ?type=project).
+    - Success/error UI uses Bootstrap alerts; validate.js will toggle visibility and aria-live regions.
+    - Replace the Google Maps iframe src with a proper embed URL.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Asaba Business Community</title>
+  <meta name="description" content="Contact Asaba Business Community — Email / call us" />
+
+  <!-- Google Fonts preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS & GLightbox CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+
+  <!-- Organization JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Asaba Business Community",
+    "url": "https://asababusinesscommunity.com",
+    "logo": "https://asababusinesscommunity.com/assets/img/logo/abc-logo.png",
+    "sameAs": [
+      "https://web.facebook.com/asababusiness1?mibextid=ZbWKwL&_rdc=1&_rdr",
+      "https://www.youtube.com/@asababusinesscommunity3445?si=x8nm39pqfY73vUrM",
+      "https://www.instagram.com/asababusiness/"
+    ],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+234-907-141-9508",
+        "contactType": "customer service",
+        "areaServed": "NG"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Theme favicons -->
+  <link rel="icon" href="./assets/img/logo/favicon.svg" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+
+
+</head>
+<body class="bg-light">
+
+  <!-- Skip to content -->
+  <!-- <a class="visually-hidden-focusable skip-link" href="#main">Skip to content</a> -->
+
+  <!-- Header / Navbar -->
+  <header class="sticky-top shadow-sm bg-white">
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-light container" aria-label="Primary navigation">
+      <div class="container-fluid px-0">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="./index.html">
+          <img src="./assets/img/logo/abc-logo.png" alt="Asaba Business Community logo" width="40" height="40" loading="lazy">
+          <span class="fw-bold">Asaba Business Community</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navCollapse">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="./index.html#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="/about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="./events.html">Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="./projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="./team.html">Team</a></li>
+            <li class="nav-item"><a class="nav-link active" href="./contact.html">Contact</a></li>
+            <li class="nav-item ms-3">
+              <a class="btn btn-primary btn-sm js-purchase-btn" role="button" data-purchase-url="#" aria-label="Join or buy a stall">Join Us Now</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="container my-5">
+    <!-- Intro -->
+    <section class="row g-4 align-items-center mb-4" data-aos="fade-up">
+      <div class="col-lg-7">
+        <h1 class="display-6 lh-1">Get in touch</h1>
+        <p class="lead text-muted">Questions about membership, vendor stalls, sponsorships, or submitting a project? Send us a message — we typically respond within 2 business days.</p>
+      </div>
+
+      <div class="col-lg-5 text-lg-end">
+        <a class="btn btn-outline-primary me-2" href="mailto:adaonwubiko@asababusinesscommunity.com">Email us</a>
+        <a class="btn btn-outline-secondary" href="tel:+2349071419508">Call +234 907 141 9508</a>
+      </div>
+    </section>
+
+    <div class="row g-4">
+      <!-- Contact form -->
+      <section class="col-lg-7" aria-labelledby="contact-form-heading" data-aos="fade-up">
+        <h2 id="contact-form-heading" class="h5 mb-3">Contact form</h2>
+
+        <!-- Alerts -->
+        <div id="contact-alerts" aria-live="polite" aria-atomic="true">
+          <div id="contact-success" class="alert alert-success d-none" role="status">
+            <strong>Thank you!</strong> Your message has been sent. We'll be in touch within 2 business days.
+          </div>
+          <div id="contact-error" class="alert alert-danger d-none" role="alert">
+            <strong>Oops — something went wrong.</strong> Please try again or email info@asababusinesscommunity.com.
+          </div>
+        </div>
+
+        <form id="contact-form" novalidate>
+          <!-- Hidden ref field (prefilled by JS from ?type=project or ?type=volunteer etc.) -->
+          <input type="hidden" id="ref" name="ref" value="">
+
+          <div class="mb-3">
+            <label for="name" class="form-label small">Full name</label>
+            <input type="text" id="name" name="name" class="form-control" required aria-required="true" placeholder="Jane Doe">
+            <div class="invalid-feedback">Please provide your name.</div>
+          </div>
+
+          <div class="row gx-2">
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label small">Email address</label>
+              <input type="email" id="email" name="email" class="form-control" required aria-required="true" placeholder="you@example.com">
+              <div class="invalid-feedback">Enter a valid email address.</div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="phone" class="form-label small">Phone</label>
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="+234 80 0000 0000">
+              <div class="invalid-feedback">Please enter a valid phone number.</div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="company" class="form-label small">Company / Business (optional)</label>
+            <input type="text" id="company" name="company" class="form-control" placeholder="Your business name">
+          </div>
+
+          <div class="mb-3">
+            <label for="subject" class="form-label small">Subject</label>
+            <input type="text" id="subject" name="subject" class="form-control" placeholder="Membership / Stall / Sponsorship" required>
+            <div class="invalid-feedback">Please provide a subject.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="message" class="form-label small">Message</label>
+            <textarea id="message" name="message" rows="6" class="form-control" placeholder="Tell us about your enquiry..." required></textarea>
+            <div class="invalid-feedback">Message cannot be empty.</div>
+          </div>
+
+          <div class="d-flex align-items-center gap-2">
+            <button id="contact-submit" class="btn btn-primary" type="submit" aria-label="Send message">
+              <span id="contact-submit-text">Send message</span>
+              <span id="contact-submit-spinner" class="spinner-border spinner-border-sm ms-2 d-none" role="status" aria-hidden="true"></span>
+            </button>
+
+            <a class="btn btn-outline-secondary" href="mailto:adaonwubiko@asababusinesscommunity.com">Or email us</a>
+          </div>
+        </form>
+
+        <p class="small text-muted mt-3">We respect your privacy. Your details are used only to respond to your enquiry.</p>
+      </section>
+
+      <!-- Contact details & map -->
+      <aside class="col-lg-5" aria-labelledby="contact-details-heading" data-aos="fade-up" data-aos-delay="50">
+        <h2 id="contact-details-heading" class="h5 mb-3">Visit or call</h2>
+        <address class="small text-muted mb-3">
+          <strong>Asaba Business Community</strong><br>
+          Asaba, Delta State, Nigeria<br>
+          Phone: <a href="tel:+2349071419508">+234 907 141 9508</a><br>
+          Email: <a href="mailto:adaonwubiko@asababusinesscommunity.com">support@asababusinesscommunity.com</a>
+        </address>
+
+        <h3 class="h6 mb-2">Office hours</h3>
+        <p class="small text-muted">Mon–Sun: 9:00 AM – 5:00 PM (WAT)</p>
+
+        <!-- <h3 class="h6 mb-2">How to reach us</h3>
+        <ul class="small text-muted mb-3">
+          <li>By car: accessible from Old Market Road with vendor parking at the venue.</li>
+          <li>By public transport: ask for Ukpaba Road stop; short walk to our office.</li>
+        </ul> -->
+
+        <h3 class="h6 mb-2">Map</h3>
+        <!-- Replace src with an actual Google Maps embed for your exact address -->
+        <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
+          <iframe title="Asaba Business Community location map" 
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d507864.6896927716!2d6.4721804!3d6.0368148!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104392b2b061bd39%3A0x749611dbcabe9489!2sAsaba%2C%20Delta!5e0!3m2!1sen!2sng!4v1725130329047!5m2!1sen!2sng" 
+          width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+      </aside>
+    </div>
+
+    <!-- FAQ -->
+    <section class="mt-5" aria-labelledby="faq-heading" data-aos="fade-up">
+      <h2 id="faq-heading" class="h5 mb-3">Frequently asked questions</h2>
+
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faq1-heading">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+              How do I book a stall at the Asaba Vendor Expo?
+            </button>
+          </h3>
+          <div id="faq1" class="accordion-collapse collapse" aria-labelledby="faq1-heading" data-bs-parent="#faqAccordion">
+            <div class="accordion-body small text-muted">
+              Booking is done online via our Join Us Now page (use the Join CTA), or message us through this contact form with subject "Book stall" and we'll walk you through costs and stall sizes.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faq2-heading">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+              What are the stall fees and payment methods?
+            </button>
+          </h3>
+          <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2-heading" data-bs-parent="#faqAccordion">
+            <div class="accordion-body small text-muted">
+              Fees vary by event size. We accept bank transfer, POS payments at our vendor desk during event setup, and negotiated arrangements via partners for bulk bookings. Ask using the contact form for a tailored quote.
+            </div>
+          </div>
+        </div>
+<!-- 
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faq3-heading">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+              How do I apply for training or mentorship?
+            </button>
+          </h3>
+          <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3-heading" data-bs-parent="#faqAccordion">
+            <div class="accordion-body small text-muted">
+              Use the subject "Training" or "Mentorship" on the contact form, or go to the Projects or Team pages for program details. We announce training dates on our newsletter and social channels.
+            </div>
+          </div>
+        </div> -->
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faq4-heading">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+              Can I sponsor an event or partner with ABC?
+            </button>
+          </h3>
+          <div id="faq4" class="accordion-collapse collapse" aria-labelledby="faq4-heading" data-bs-parent="#faqAccordion">
+            <div class="accordion-body small text-muted">
+              Yes — sponsors are vital. Use subject "Sponsor" on the contact form or email info@asababusinesscommunity.com with details of your offer and desired visibility.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faq5-heading">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+              What is the refund policy for stall bookings?
+            </button>
+          </h3>
+          <div id="faq5" class="accordion-collapse collapse" aria-labelledby="faq5-heading" data-bs-parent="#faqAccordion">
+            <div class="accordion-body small text-muted">
+              Refunds depend on timing and reason; early cancellations may receive partial refunds minus administrative fees. Contact us with booking details and we'll clarify options.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faq6-heading">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
+              How long before an event should I register?
+            </button>
+          </h3>
+          <div id="faq6" class="accordion-collapse collapse" aria-labelledby="faq6-heading" data-bs-parent="#faqAccordion">
+            <div class="accordion-body small text-muted">
+              For large expos, reserve your stall at least 6–8 weeks in advance. For regular market days, registration typically closes 3–5 days before the event depending on availability.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-top mt-5">
+    <div class="container py-4 d-flex justify-content-between small">
+      <div>&copy; <span id="current-year-contact"></span> Asaba Business Community</div>
+      <div><a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a></div>
+    </div>
+  </footer>
+
+  <!-- Script includes -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.0/dist/gsap.min.js" defer></script>
+
+  <!-- Optional: EmailJS (validate.js will gracefully fall back if not configured) -->
+  <!-- NOTE: If you prefer Formspree, set that up in validate.js and remove EmailJS usage -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js" defer></script>
+
+  <!-- Main site JS -->
+  <script src="./assets/js/main.js" defer></script>
+  <script src="./assets/js/validate.js" defer></script>
+
+  <script>
+    // Small immediate scripts for UX
+    document.getElementById('current-year-contact').textContent = new Date().getFullYear();
+
+    // Prefill the form "ref" and "subject" from query params if present (e.g., ?type=project)
+    (function prefillFromQuery() {
+      const params = new URLSearchParams(window.location.search);
+      const type = params.get('type') || params.get('ref') || '';
+      if (type) {
+        const refInput = document.getElementById('ref');
+        const subjectInput = document.getElementById('subject');
+        if (refInput) refInput.value = type;
+        if (subjectInput && !subjectInput.value) subjectInput.value = (type === 'project') ? 'Project submission' : (type === 'sponsor') ? 'Sponsorship enquiry' : (type === 'volunteer') ? 'Volunteer enquiry' : '';
+      }
+    })();
+
+    // Initialize AOS once library is parsed (main.js will also initialize AOS globally)
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.AOS) AOS.init({ once: true, duration: 600, disable: "phone" });
+    });
+  </script>
+</body>
+</html>

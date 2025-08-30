@@ -1,0 +1,289 @@
+/*!
+ * /assets/css/styles.css
+ * Purpose: Primary custom styles for Asaba Business Community site.
+ * - CSS Variables for design system
+ * - Utility helpers (object-fit, ratios)
+ * - Component refinements (buttons, cards, hero)
+ * - Accessibility: focus styles, reduced-motion handling
+ * Notes:
+ * - Pages load Google Fonts in their <head>; here we reference them.
+ * - Keep this file lean; rely on Bootstrap utilities for layout.
+ */
+
+/* =========================
+   Design tokens / variables
+   ========================= */
+:root{
+  /* Colors */
+  --brand-900: #063440;   /* deep */
+  --brand-700: #0b4a6f;   /* primary brand used in theme-color */
+  --accent-500: #ff7a18;  /* warm accent for CTAs */
+  --bg: #ffffff;
+  --surface: #f8fafb;
+  --muted: #0b2233;
+  --text: #0b2233;
+  --success: #198754;
+  --danger: #dc3545;
+
+  /* Spacing scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(12, 23, 28, 0.06);
+  --shadow-md: 0 8px 30px rgba(12, 23, 28, 0.08);
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+
+  /* Breakpoints (to reference in utility classes if needed) */
+  --bp-sm: 576px;
+  --bp-md: 768px;
+  --bp-lg: 992px;
+  --bp-xl: 1200px;
+
+  /* Misc */
+  --transition-fast: 180ms;
+  --transition-medium: 300ms;
+}
+
+/* Dark mode (optional) */
+@media (prefers-color-scheme: dark) {
+  :root{
+    --bg: #071018;
+    --surface: #0b1720;
+    --muted: #9aa7ad;
+    --text: #e6f2f3;
+  }
+}
+
+/* =========================
+   Base typography & body
+   ========================= */
+html,body{
+  height: 100%;
+  font-family: var(--font-sans);
+  color: var(--text);
+  background-color: var(--bg);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height: 1.45;
+}
+
+/* Headings: slightly more distinguished using serif headline */
+h1,h2,h3,h4,h5,h6{
+  font-family: var(--font-serif);
+  color: var(--brand-700);
+  margin-top: 0;
+}
+
+/* Utility: small muted text */
+.text-muted{ color: var(--muted) !important; }
+
+/* =========================
+   Accessibility helpers
+   ========================= */
+
+/* Skip link - visible when focused */
+.skip-link,
+.visually-hidden-focusable{
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -9999;
+}
+
+.skip-link:focus,
+.visually-hidden-focusable:focus{
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  background: var(--brand-700);
+  color: #fff;
+  border-radius: 6px;
+  z-index: 9999;
+  text-decoration: none;
+  box-shadow: var(--shadow-md);
+}
+
+/* Focus styles for keyboard navigation */
+:focus{
+  outline: 3px solid rgba(11,74,111,0.18);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible){
+  outline: none;
+}
+
+/* =========================
+   Buttons and CTAs
+   ========================= */
+
+/* Primary button override to use brand color + accent */
+.btn-primary{
+  background: linear-gradient(90deg, var(--brand-700) 0%, var(--brand-900) 100%);
+  border: none;
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  border-radius: var(--radius-md);
+}
+
+.btn-primary:hover,
+.btn-primary:focus{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline-primary{
+  color: var(--brand-700);
+  border-color: rgba(11,74,111,0.12);
+}
+
+/* Ghost / subtle variant */
+.btn-ghost{
+  background: transparent;
+  color: var(--brand-700);
+  border: 1px dashed rgba(11,74,111,0.08);
+}
+
+/* Small rounded icon button for social links */
+.btn-circle{
+  border-radius: 50%;
+  padding: 0.5rem;
+  width: 44px;
+  height: 44px;
+}
+
+/* =========================
+   Card and Media helpers
+   ========================= */
+
+.card{
+  border-radius: var(--radius-md);
+}
+
+/* Surface bg for small UI blocks */
+.bg-surface{
+  background: var(--surface);
+}
+
+/* Keep consistent aspect ratio and object fit for images */
+.object-cover{
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Ratio utilities for consistent image area (rely on Bootstrap ratio utilities) */
+.hero-media img{ width: 100%; height: auto; display: block; }
+
+/* Icon square used in value prop cards */
+.icon-square{
+  width: 56px;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(11,74,111,0.06);
+  border-radius: 10px;
+}
+
+/* Partner logo strip */
+.partner-logos img{
+  max-height: 60px;
+  opacity: 0.95;
+  filter: saturate(0.98);
+}
+
+/* Counters */
+.counter{
+  font-family: var(--font-serif);
+  color: var(--brand-700);
+  font-weight: 700;
+}
+
+/* Testimonials */
+.blockquote{
+  border-left: 4px solid rgba(11,74,111,0.06);
+}
+
+/* Footer */
+footer{
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Back to top button */
+#backToTop{
+  box-shadow: var(--shadow-md);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+/* =========================
+   Responsive tweaks
+   ========================= */
+@media (min-width: 992px){
+  .hero-title{ font-size: 2.25rem; }
+}
+
+/* =========================
+   Reduced motion
+   ========================= */
+@media (prefers-reduced-motion: reduce){
+  *{
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:focus{
+    transform: none;
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+/* =========================
+   Small utilities for this project
+   ========================= */
+.centered{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.text-brand{
+  color: var(--brand-700) !important;
+}
+
+/* Lightbox caption override for GLightbox to match site */
+.glightbox_container .gdesc{
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+/* Keep long paragraphs readable */
+.container p {
+  max-width: 68ch;
+}
+
+/* Ensure modals have a readable max-width */
+.modal-lg{
+  max-width: 900px;
+}

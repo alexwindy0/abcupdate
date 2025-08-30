@@ -1,0 +1,672 @@
+<!--
+  /projects.html
+  Purpose: Projects portfolio with accessible Bootstrap tabs per category.
+  Notes:
+    - Tabs: Training Programs, Vendor Exhibitions, Mentorship & Clinics, Funding & Pitches, Partnerships
+    - Each tab includes concise project descriptions and a responsive gallery (8 images) with GLightbox.
+    - Case study modal uses Bootstrap modal and is keyboard accessible.
+    - Primary CTA buttons include class "js-purchase-btn" and will be wired by /assets/js/main.js
+    - Replace gallery images in /assets/img/projects/<category>/ with optimized images.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Asaba Business Community</title>
+  <meta name="description" content="Projects - Asaba Business Community — Our Projects from Time" />
+
+  <!-- Google Fonts preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS & GLightbox CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+
+  <!-- Organization JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Asaba Business Community",
+    "url": "https://asababusinesscommunity.com",
+    "logo": "https://asababusinesscommunity.com/assets/img/logo/abc-logo.png",
+    "sameAs": [
+      "https://web.facebook.com/asababusiness1?mibextid=ZbWKwL&_rdc=1&_rdr",
+      "https://www.youtube.com/@asababusinesscommunity3445?si=x8nm39pqfY73vUrM",
+      "https://www.instagram.com/asababusiness/"
+    ],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+234-907-141-9508",
+        "contactType": "customer service",
+        "areaServed": "NG"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Theme favicons -->
+  <link rel="icon" href="./assets/img/logo/favicon.svg" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+
+
+</head>
+<body class="bg-light">
+
+  <!-- Skip to content -->
+  <!-- <a class="visually-hidden-focusable skip-link" href="#main">Skip to content</a> -->
+
+  <!-- Header / Navbar -->
+  <header class="sticky-top shadow-sm bg-white">
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-light container" aria-label="Primary navigation">
+      <div class="container-fluid px-0">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="./index.html">
+          <img src="./assets/img/logo/abc-logo.png" alt="Asaba Business Community logo" width="40" height="40" loading="lazy">
+          <span class="fw-bold">Asaba Business Community</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navCollapse">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="./index.html#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="/about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="./events.html">Events</a></li>
+            <li class="nav-item"><a class="nav-link active" href="./projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="./team.html">Team</a></li>
+            <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+            <li class="nav-item ms-3">
+              <a class="btn btn-primary btn-sm js-purchase-btn" role="button" data-purchase-url="#" aria-label="Join or buy a stall">Join Us Now</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="container my-5">
+    <header class="mb-4" data-aos="fade-up">
+      <h1 class="display-6 lh-1">Projects & Initiatives</h1>
+      <p class="text-muted small">Learn about our current and past initiatives that help Asaba's entrepreneurs increase sales, access markets, and grow professionally.</p>
+    </header>
+
+    <!-- Tabs -->
+    <section aria-labelledby="projects-heading" class="mb-4">
+      <h2 id="projects-heading" class="h5 visually-hidden">Project categories</h2>
+
+      <ul class="nav nav-tabs" id="projectsTab" role="tablist" data-aos="fade-up">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="tab-training" data-bs-toggle="tab" data-bs-target="#panel-training" type="button" role="tab" aria-controls="panel-training" aria-selected="true">
+            Trade Fair
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tab-charity" data-bs-toggle="tab" data-bs-target="#panel-charity" type="button" role="tab" aria-controls="panel-charity" aria-selected="false">
+            Charity Visits
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tab-exhibitions" data-bs-toggle="tab" data-bs-target="#panel-exhibitions" type="button" role="tab" aria-controls="panel-exhibitions" aria-selected="false">
+            Vendors Exhibition 1.0
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tab-funding" data-bs-toggle="tab" data-bs-target="#panel-funding" type="button" role="tab" aria-controls="panel-funding" aria-selected="false">
+            Vendors Exhibition 2.0
+          </button>
+        </li>
+      </ul>
+
+      <div class="tab-content border-start border-end border-bottom p-4 bg-white" id="projectsTabContent" data-aos="fade-up" data-aos-delay="50">
+        <!-- TAB: TRADE FAIR -->
+        <section id="panel-training" class="tab-pane fade show active" role="tabpanel" aria-labelledby="tab-training">
+          <div class="row g-4">
+            <div class="col-lg-8">
+              <article>
+                <h3 class="h6">Asaba Business Community Tradefair</h3>
+                <p class="small text-muted">
+                  Through our annual and monthly vendor Tradefair, we successfully brought together local vendors and buyers. 
+                  These events, which typically drew 100–120 vendors and up to 2,000 visitors, had a clear impact: 
+                  many participating vendors were able to secure long-term contracts and boost their regular sales.
+                </p>
+                <p class="small text-muted mb-2"><strong>Objective:</strong> 
+                  To provide a dynamic platform for local vendors to expand their market reach, secure new clients, 
+                  and increase sales by connecting them with a large and diverse audience of institutional and individual buyers.
+                </p>
+                <p class="small text-muted mb-0"><strong>Outcomes:</strong> 
+                  Our tradefair successfully facilitated business growth for participating vendors. 
+                  They reported securing multiple repeat institutional buyers 
+                  and achieving a noticeable increase in their weekday sales, demonstrating the long-term commercial impact of the events.
+                </p>
+              </article>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="card border-0 shadow-sm p-3">
+                <h4 class="h6 mb-2">Typical session</h4>
+                <ul class="small text-muted mb-0">
+                  <li>Hosted 130 Business Owners</li>
+                  <li>Products Buying and Selling</li>
+                  <li>On-site display</li>
+                  <li>Background Music</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery (8 images) -->
+          <div class="mt-4 gallery-grid">
+            <div class="row g-2">
+              <!-- Use category-specific folder: /assets/img/projects/training/ -->
+              <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/tradefair/pr1.webp" class="glightbox" data-gallery="training" data-title="Vendors Display">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/tradefair/pr1.webp" alt="Vendors Display" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+              <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/tradefair/pr13.webp" class="glightbox" data-gallery="training" data-title="Vendors Display">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/tradefair/pr13.webp" alt="Vendors Display" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+              <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/tradefair/pr10.webp" class="glightbox" data-gallery="training" data-title="Vendors Display">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/tradefair/pr10.webp" alt="Vendors Display" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+              <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/tradefair/pr4.webp" class="glightbox" data-gallery="training" data-title="Vendors Display">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/tradefair/pr4.webp" alt="Vendors Display" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+
+              <!-- 4 more images -->
+              <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/tradefair/pr5.webp" class="glightbox" data-gallery="training" data-title="Vendors Display">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/tradefair/pr5.webp" alt="Vendors Display" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+              <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/tradefair/pr6.webp" class="glightbox" data-gallery="training" data-title="Vendors Display">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/tradefair/pr6.webp" alt="Vendors Display" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+              <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/tradefair/pr7.webp" class="glightbox" data-gallery="training" data-title="Vendors Display">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/tradefair/pr7.webp" alt="Vendors Display" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+              <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/tradefair/pr8.webp" class="glightbox" data-gallery="training" data-title="Vendors Display">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/tradefair/pr8.webp" alt="Vendors Display" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+
+        <!-- TAB: CHARITY -->
+        <section id="panel-charity" class="tab-pane fade" role="tabpanel" aria-labelledby="tab-charity">
+          <div class="row g-4">
+            <div class="col-lg-8">
+              <article>
+                <h3 class="h6">Charity Visit to Flood Victims in Asaba</h3>
+                <p class="small text-muted">
+                  A humanitarian team recently visited communities affected by severe flooding, providing essential relief and support. 
+                  The visits, which typically reached 250–300 households per session, had a significant impact: 
+                  many flood victims received the immediate aid they needed, 
+                  helping them cope with the disaster and begin the recovery process.
+                </p>
+                <p class="small text-muted mb-0"><strong>Objective:</strong> 
+                  To provide critical aid and emotional support to flood victims, 
+                  helping them meet their basic needs and assisting in their initial recovery.
+                </p>
+              </article>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="card border-0 shadow-sm p-3">
+                <h4 class="h6 mb-2">Typical Session</h4>
+                <ul class="small text-muted mb-0">
+                  <li>Distribution of relief materials</li>
+                  <li>Psychosocial support</li>
+                  <li>Needs assessment</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- gallery for charity -->
+          <div class="mt-4 gallery-grid">
+            <div class="row g-2">
+              <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/charity/pr1.webp" class="glightbox" data-gallery="charity" data-title="Charity Visits">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/charity/pr1.webp" alt="charity Visits" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+              <!-- rest images -->
+               <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/charity/pr2.webp" class="glightbox" data-gallery="charity" data-title="Charity Visits">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/charity/pr2.webp" alt="charity Visits" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+               <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/charity/pr3.webp" class="glightbox" data-gallery="charity" data-title="Charity Visits">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/charity/pr3.webp" alt="charity Visits" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+               <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/charity/pr1.webp" class="glightbox" data-gallery="charity" data-title="Charity Visits">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/charity/pr1.webp" alt="charity Visits" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- TAB: EXHIBITIONS 4.0 -->
+        <section id="panel-exhibitions" class="tab-pane fade" role="tabpanel" aria-labelledby="tab-exhibitions">
+          <div class="row g-4">
+            <div class="col-lg-8">
+              <article>
+                <h3 class="h6">Vendor Exhibition Series</h3>
+                <p class="small text-muted">
+                  Our flagship vendor exhibitions (annual expos and monthly mini-expos) showcased hundreds of local 
+                  vendors to thousands of buyers. Typical turnout at the annual expos: 2,000–3,500 visitors; 120–180 vendors.
+                </p>
+                <p class="small text-muted mb-0"><strong>Outcome:</strong>
+                   Several vendors secured repeat institutional buyers and increased weekday orders after exhibitions.
+                </p>
+              </article>
+            </div>
+            <div class="col-lg-4">
+              <div class="card border-0 shadow-sm p-3">
+                <h4 class="h6 mb-2">Exhibition highlights</h4>
+                <ul class="small text-muted mb-0">
+                  <li>Priority listing for buyers</li>
+                  <li>Vendor support desk</li>
+                  <li>Advertising in local media</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery - exhibitions -->
+          <div class="mt-4 gallery-grid">
+            <div class="row g-2">
+              <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/exhibition4.0/ELE1.webp" class="glightbox" data-gallery="exhibitions" data-title="Exhibition 1.0">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/exhibition4.0/ELE1.webp" alt="Vendor Exhibition 1.0" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+              <!-- 7 more -->
+              <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/exhibition4.0/ELE2.webp" class="glightbox" data-gallery="exhibitions" data-title="Exhibition 1.0">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/exhibition4.0/ELE2.webp" alt="Vendor Exhibition 1.0" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+
+              <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/exhibition4.0/ELE3.webp" class="glightbox" data-gallery="exhibitions" data-title="Exhibition 1.0">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/exhibition4.0/ELE3.webp" alt="Vendor Exhibition 1.0" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+
+              <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/exhibition4.0/ELE4.webp" class="glightbox" data-gallery="exhibitions" data-title="Exhibition 1.0">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/exhibition4.0/ELE4.webp" alt="Vendor Exhibition 1.0" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+
+              <!-- second row images -->
+              <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/exhibition4.0/ELE5.webp" class="glightbox" data-gallery="exhibitions" data-title="Exhibition 1.0">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/exhibition4.0/ELE5.webp" alt="Vendor Exhibition 1.0" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+
+              <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/exhibition4.0/ELE6.webp" class="glightbox" data-gallery="exhibitions" data-title="Exhibition 1.0">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/exhibition4.0/ELE6.webp" alt="Vendor Exhibition 1.0" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+
+              <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/exhibition4.0/ELE7.webp" class="glightbox" data-gallery="exhibitions" data-title="Exhibition 1.0">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/exhibition4.0/ELE7.webp" alt="Vendor Exhibition 1.0" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+
+              <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/exhibition4.0/ELE8.webp" class="glightbox" data-gallery="exhibitions" data-title="Exhibition 1.0">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/exhibition4.0/ELE8.webp" alt="Vendor Exhibition 1.0" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        
+
+        <!-- TAB: Exhibition -->
+        <section id="panel-funding" class="tab-pane fade" role="tabpanel" aria-labelledby="tab-funding">
+          <div class="row g-4">
+            <div class="col-lg-8">
+              <article>
+                <h3 class="h6">Asaba Business Vendors Exhibition 2.0</h3>
+                <p class="small text-muted">
+                  The Sold-Out Geng Edition of the Asaba Vendors Exhibition was nothing short of phenomenal. 
+                  Held on the 9th and 10th of August at the Government Model Secondary School Field, DBS Junction, Asaba, 
+                  this landmark event brought together over 110 vibrant business owners under one roof — and the results were 
+                  extraordinary. In just two days, several vendors proudly testified to selling out their products, 
+                  a true reflection of the buying power, support, and community spirit that Asaba Vendors Exhibition has 
+                  come to represent. One fashion vendor described the experience as “the best exposure my brand has ever had — 
+                  I sold out in less than 48 hours.” A food vendor echoed the same excitement: “I didn’t just make sales, 
+                  I built lasting connections with customers who are already re-ordering after the event.” Beyond sales, 
+                  the Exhibition created an atmosphere of connection, collaboration, and celebration of enterprise. 
+                  Business owners networked, forged new partnerships, and tapped into opportunities that will continue to 
+                  ripple long after the event. 
+                </p>
+                <p class="small text-muted mb-0"><strong>Success:</strong> 
+                  The community came out in full force, proving once again that when local 
+                  businesses are given the platform to shine, they exceed expectations. 
+                  The Sold-Out Geng Edition wasn’t just an exhibition — it was a movement. It demonstrated the resilience, creativity, and unstoppable spirit of 
+                  entrepreneurs in Asaba and beyond.
+                </p>
+              </article>
+            </div>
+            <div class="col-lg-4">
+              <div class="card border-0 shadow-sm p-3">
+                <h4 class="h6 mb-2">Program elements</h4>
+                <ul class="small text-muted mb-0">
+                  <li>Vendor Showcase</li>
+                  <li>Networking and Collaboration</li>
+                  <li>Direct Sales and Market Access</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Funding gallery -->
+          <div class="mt-4 gallery-grid">
+            <div class="row g-2">
+              <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/exhibition2.0/ex-01.webp" class="glightbox" data-gallery="funding" data-title="Exhibition 2.0">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/exhibition2.0/ex-01.webp" alt="Exhibition 2.0" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+              <!-- 7 more -->
+               <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/exhibition2.0/ex-02.webp" class="glightbox" data-gallery="funding" data-title="Exhibition 2.0">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/exhibition2.0/ex-02.webp" alt="Exhibition 2.0" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+               <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/exhibition2.0/ex-03.webp" class="glightbox" data-gallery="funding" data-title="Exhibition 2.0">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/exhibition2.0/ex-03.webp" alt="Exhibition 2.0" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+               <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/exhibition2.0/ex-04.webp" class="glightbox" data-gallery="funding" data-title="Exhibition 2.0">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/exhibition2.0/ex-04.webp" alt="Exhibition 2.0" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+
+               <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/exhibition2.0/ex-05.webp" class="glightbox" data-gallery="funding" data-title="Exhibition 2.0">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/exhibition2.0/ex-05.webp" alt="Exhibition 2.0" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+
+               <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/exhibition2.0/ex-06.webp" class="glightbox" data-gallery="funding" data-title="Exhibition 2.0">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/exhibition2.0/ex-06.webp" alt="Exhibition 2.0" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+
+              <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/exhibition2.0/ex-07.webp" class="glightbox" data-gallery="funding" data-title="Exhibition 2.0">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/exhibition2.0/ex-07.webp" alt="Exhibition 2.0" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+
+               <div class="col-6 col-md-3" data-aos="zoom-in">
+                <a href="./assets/img/projects/exhibition2.0/ex-08.webp" class="glightbox" data-gallery="funding" data-title="Exhibition 2.0">
+                  <figure class="ratio ratio-4x3 overflow-hidden rounded">
+                    <img src="./assets/img/projects/exhibition2.0/ex-08.webp" alt="Exhibition 2.0" class="w-100 h-100 object-cover" loading="lazy" width="400" height="300">
+                  </figure>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+    <!-- CTA / Partner / Sponsor -->
+    <section class="py-5 text-center" data-aos="fade-up">
+      <div class="card border-0 shadow-sm mx-auto p-4"
+      style="max-width:820px; background: #bdc3c7;  /* fallback for old browsers */
+          background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+          background: linear-gradient(to top, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */"
+      >
+        <h3 class="h5 mb-2 text-light">Partner with us or join as a vendor</h3>
+        <h5 class="small text-light mb-3">
+          Join us today and start your journey towards greater achievements. 
+          Your business deserves the best, let’s make it happen together!
+        </h5>
+        <div class="d-flex justify-content-center gap-2">
+          <a class="btn btn-primary js-purchase-btn" data-purchase-url="#" role="button">Join Us Now</a>
+          <a class="btn btn-outline-light" href="mailto:adaonwubiko@asababusinesscommunity.com?subject=Sponsor%20an%20event%20in%20Asaba">Sponsor an event</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Case study modal (dynamic content filled by JS based on data-case attribute) -->
+  <div class="modal fade" id="caseStudyModal" tabindex="-1" aria-labelledby="caseStudyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 id="caseStudyModalLabel" class="modal-title">Project case study</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- content replaced by JS for each case -->
+          <div id="caseStudyContent">
+            <p class="small text-muted">Loading...</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+          <a class="btn btn-primary js-purchase-btn" data-purchase-url="#">Join program</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer (same as index) -->
+   <footer class="bg-white border-top mt-5">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <a href="./index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+            <img src="./assets/img/logo/abc-logo.png" alt="Asaba Business Community logo" width="40" height="40" loading="lazy">
+            <span class="fw-bold">Asaba Business Community</span>
+          </a>
+          <p class="small text-muted mt-2">Supporting small businesses in Asaba through markets, training, and partnerships since 2021.</p>
+          <p class="small text-muted mb-0">Address: Asaba, Delta State, Nigeria, West Africa.</p>
+          <p class="small text-muted">Phone: <a href="tel:+2349071419508">+234 907 141 9508</a></p>
+        </div>
+
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase small">Quick links</h6>
+          <ul class="list-unstyled small">
+            <li><a href="./about.html" class="text-decoration-none">About</a></li>
+            <li><a href="./events.html" class="text-decoration-none">Events</a></li>
+            <li><a href="./projects.html" class="text-decoration-none">Projects</a></li>
+            <li><a href="./team.html" class="text-decoration-none">Team</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <h6 class="text-uppercase small">Contact</h6>
+          <p class="small mb-1">Email: <a href="mailto:adaonwubiko@asababusinesscommunity.com">info@asababusinesscommunity.com</a></p>
+          <p class="small">Office hours: Mon–Sun, 9am–5pm</p>
+          <div class="d-flex gap-2 mt-2">
+            <a class="btn btn-outline-dark btn-sm" href="https://web.facebook.com/asababusiness1?mibextid=ZbWKwL&_rdc=1&_rdr" aria-label="Follow us on Facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a class="btn btn-outline-dark btn-sm" href="https://www.youtube.com/@asababusinesscommunity3445?si=x8nm39pqfY73vUrM" aria-label="Follow us on Youtube" target="_blank"><i class="bi bi-youtube"></i></a>
+            <a class="btn btn-outline-dark btn-sm" href="https://www.instagram.com/asababusiness/" aria-label="Follow us on instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a class="btn btn-outline-dark btn-sm" href="https://whatsapp.com" aria-label="Chat Us on Whatsapp" target="_blank"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <h6 class="text-uppercase small">Loaction</h6>
+          <p class="small text-muted">Asaba, Delta State, Nigeria.</p>
+          <iframe title="Asaba Business Community location map" 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d507864.6896927716!2d6.4721804!3d6.0368148!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104392b2b061bd39%3A0x749611dbcabe9489!2sAsaba%2C%20Delta!5e0!3m2!1sen!2sng!4v1725130329047!5m2!1sen!2sng" 
+            width="100%" 
+            height="140" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="border-top pt-3 mt-3 d-flex justify-content-between small">
+        <div>&copy; <span id="current-year"></span> Asaba Business Community — All rights reserved.</div>
+        <div><a href="./privacy.html" class="text-decoration-none">Privacy</a> · <a href="./terms.html" class="text-decoration-none">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="backToTop" class="btn btn-primary btn-lg rounded-circle" aria-label="Back to top" style="display:none;position:fixed;right:1rem;bottom:1rem;z-index:999;">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Script includes (deferred) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.0/dist/gsap.min.js" defer></script>
+  <script src="./assets/js/main.js" defer></script>
+
+  <script>
+    // Set current year in footer immediately for paint
+    document.getElementById('current-year-projects').textContent = new Date().getFullYear();
+
+    // Simple modal content mapping for case studies — main.js will also enhance this.
+    document.addEventListener('DOMContentLoaded', function () {
+      const caseModal = document.getElementById('caseStudyModal');
+      if (!caseModal) return;
+      caseModal.addEventListener('show.bs.modal', function (evt) {
+        // Button that triggered the modal
+        const btn = evt.relatedTarget;
+        const caseKey = btn && btn.getAttribute('data-case') ? btn.getAttribute('data-case') : 'training';
+        const content = document.getElementById('caseStudyContent');
+
+        // Content map (concise, concrete case studies)
+        const cases = {
+          training: {
+            title: 'Training Series: Display & Digital Payments',
+            body: `<p class="small text-muted">In 2023 we ran a targeted training series for 120 vendors on visual merchandising and mobile payments. One participant increased weekday sales by 40% after implementing display changes and offering mobile payment options.</p>
+                   <p class="small text-muted mb-0"><strong>What we did:</strong> hands-on coaching, before/after display support, and payment onboarding.</p>`
+          },
+          exhibitions: {
+            title: 'Vendor Exhibition: Asaba Vendor Expo 2024',
+            body: `<p class="small text-muted">The 2024 Expo hosted 180 vendors and attracted over 3,000 visitors. Several vendors secured recurring contracts with nearby schools and hospitality venues.</p><p class="small text-muted mb-0"><strong>Outcome:</strong> Repeat buyers and long-term procurement leads for high-performing vendors.</p>`
+          },
+          mentorship: {
+            title: 'Mentorship Clinics: Supply Chain Fixes',
+            body: `<p class="small text-muted">A mentorship clinic helped three vendors group their orders to meet a larger institutional buyer's minimum quantity, unlocking a steady weekly contract.</p><p class="small text-muted mb-0"><strong>Outcome:</strong> increased order stability and better pricing for grouped suppliers.</p>`
+          },
+          funding: {
+            title: 'Pitch Day: Micro-grant winners',
+            body: `<p class="small text-muted">Pitch competitions awarded micro-grants and coaching to 12 vendors. Several used funds to purchase equipment, increasing production and allowing them to hire staff.</p><p class="small text-muted mb-0"><strong>Outcome:</strong> improved productivity and job creation at the vendor level.</p>`
+          }
+        };
+
+        const selected = cases[caseKey] || cases.training;
+        document.getElementById('caseStudyModalLabel').textContent = selected.title;
+        content.innerHTML = selected.body;
+      });
+    });
+  </script>
+</body>
+</html>
