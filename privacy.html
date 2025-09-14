@@ -15,20 +15,25 @@
   <title>Privacy — Asaba Business Community</title>
   <meta name="description" content="Privacy - Asaba Business Community — User Privacy" />
 
-  <!-- Google Fonts preconnect -->
+  <!-- Preconnect for fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts: Inter (body) + Playfair Display (headings) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap CSS (CDN) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- AOS & GLightbox CSS -->
+  <!-- AOS CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- GLightbox CSS -->
   <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
 
-  <!-- Bootstrap Icons -->
+  <!-- Bootstrap Icons (single icon set) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -40,7 +45,10 @@
 
 
   <!-- Custom styles -->
-  <link rel="stylesheet" href="./assets/css/styles.css">
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+
+  <!-- Neon Custom styles -->
+  <link rel="stylesheet" href="./assets/css/project.css" />
 
   <!-- Organization JSON-LD -->
   <script type="application/ld+json">
@@ -72,14 +80,16 @@
 
 
 </head>
-<body class="bg-light">
-
+<body style="--bs-body-bg: #000000; --muted: #5a6a77;">
+  <!-- <a class="skip-to-content-link" href="#main">Skip to content</a> -->
   <!-- Skip to content -->
   <!-- <a class="visually-hidden-focusable skip-link" href="#main">Skip to content</a> -->
 
   <!-- Header / Navbar -->
-  <header class="sticky-top shadow-sm bg-white">
-    <nav id="mainNav" class="navbar navbar-expand-lg navbar-light container" aria-label="Primary navigation">
+  <header class="sticky-top shadow-sm text-light ">
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark container" 
+      aria-label="Primary navigation"
+      style=" background: rgba(0,0,0,0.9); backdrop-filter: saturate(180%) blur(20px);">
       <div class="container-fluid px-0">
         <a class="navbar-brand d-flex align-items-center gap-2" href="./index.html">
           <img src="./assets/img/logo/abc-logo.png" alt="Asaba Business Community logo" width="40" height="40" loading="lazy">
@@ -93,13 +103,13 @@
         <div class="collapse navbar-collapse" id="navCollapse">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
             <li class="nav-item"><a class="nav-link" href="./index.html#home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="./about.html">About</a></li>
             <li class="nav-item"><a class="nav-link" href="./events.html">Events</a></li>
-            <li class="nav-item"><a class="nav-link" href="./projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link active" href="./projects.html">Projects</a></li>
             <li class="nav-item"><a class="nav-link" href="./team.html">Team</a></li>
             <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
             <li class="nav-item ms-3">
-              <a class="btn btn-primary btn-sm js-purchase-btn" role="button" data-purchase-url="#" aria-label="Join or buy a stall">Join Us Now</a>
+              <a class="btn btn-success btn-sm js-purchase-btn" role="button" data-purchase-url="#" aria-label="Join or buy a stall">Join Us Now</a>
             </li>
           </ul>
         </div>
@@ -107,9 +117,12 @@
     </nav>
   </header>
 
+
+  <!-- Main Section -->
+
   <main id="main" class="container my-5">
     <header class="mb-4" data-aos="fade-up">
-      <h1 class="display-6 lh-1">Privacy Policy</h1>
+      <h1 class="display-4 lh-1 text-light">Privacy Policy</h1>
       <p class="small text-muted">Last updated: <strong>28 August 2025</strong></p>
       <p class="lead text-muted">This Privacy Policy explains how Asaba Business Community ("ABC", "we", "us") collects, uses, shares and protects personal information for our members, vendors, partners, and site visitors.</p>
     </header>
@@ -121,7 +134,7 @@
         <li>We collect contact and business information when you register, book a stall, sign up to the newsletter, or contact us.</li>
         <li>We use data to provide services, process stall bookings, send transactional and marketing communications (with consent), and to improve our events and programs.</li>
         <li>We keep contact records for service and legal purposes; retention periods vary by purpose — see the "Retention" section below.</li>
-        <li>If you have questions or want to exercise your rights, contact <a href="mailto:adaonwubiko@asababusinesscommunity.com">privacy@asababusinesscommunity.com</a> or <a href="mailto:adaonwubiko@asababusinesscommunity.com">info@asababusinesscommunity.com</a>.</li>
+        <li>If you have questions or want to exercise your rights, contact <a href="mailto:adaonwubiko@asababusinesscommunity.com" class="some-links">privacy@asababusinesscommunity.com</a> or <a href="mailto:adaonwubiko@asababusinesscommunity.com" class="some-links">info@asababusinesscommunity.com</a>.</li>
       </ul>
     </section>
 
@@ -162,7 +175,7 @@
         <li><strong>Legitimate interests:</strong> for site security, fraud prevention, and improving our services — balancing your privacy rights.</li>
         <li><strong>Legal obligations:</strong> to comply with accounting, tax or other regulatory requirements.</li>
       </ul>
-      <p class="small text-muted">We aim to align our practices with the Nigeria Data Protection Regulation (NDPR) and applicable privacy law. If you have questions about legal compliance, contact our Data Protection Officer (DPO) at <a href="mailto:privacy@asababusinesscommunity.com">privacy@asababusinesscommunity.com</a>.</p>
+      <p class="small text-muted">We aim to align our practices with the Nigeria Data Protection Regulation (NDPR) and applicable privacy law. If you have questions about legal compliance, contact our Data Protection Officer (DPO) at <a href="mailto:privacy@asababusinesscommunity.com" class="some-links">privacy@asababusinesscommunity.com</a>.</p>
     </section>
 
     <!-- Cookies -->
@@ -206,7 +219,14 @@
     <!-- Security -->
     <section class="mb-4" data-aos="fade-up">
       <h2 class="h5">7) Security</h2>
-      <p class="small text-muted">We take reasonable technical and organisational steps to protect personal data from loss, misuse, unauthorized access, disclosure, alteration, or destruction. Measures include encrypted connections (HTTPS), access controls, and secure hosting. However, no system is 100% secure — if you suspect a breach, contact <a href="mailto:privacy@asababusinesscommunity.com">privacy@asababusinesscommunity.com</a> immediately.</p>
+      <p class="small text-muted">
+        We take reasonable technical and organisational steps to protect personal data from loss, misuse, unauthorized access, 
+        disclosure, alteration, or destruction. Measures include encrypted connections (HTTPS), access controls, and secure hosting. 
+        However, no system is 100% secure — if you suspect a breach, contact 
+        <a href="mailto:privacy@asababusinesscommunity.com" class="some-links">
+          privacy@asababusinesscommunity.com
+        </a> immediately.
+      </p>
     </section>
 
     <!-- Your rights -->
@@ -222,7 +242,7 @@
         <li><strong>Data portability:</strong> where applicable, request your data in a structured, machine-readable format.</li>
         <li><strong>Withdraw consent:</strong> withdraw consent for processing that was based solely on consent.</li>
       </ul>
-      <p class="small text-muted">To exercise these rights, email <a href="mailto:adaonwubiko@asababusinesscommunity.com">privacy@asababusinesscommunity.com</a> or write to: Data Protection Officer, Asaba Business Community, 12 Ukpaba Road, Asaba, Delta State, Nigeria. We will respond promptly and in accordance with applicable law.</p>
+      <p class="small text-muted">To exercise these rights, email <a href="mailto:adaonwubiko@asababusinesscommunity.com" class="some-links">privacy@asababusinesscommunity.com</a> or write to: Data Protection Officer, Asaba Business Community, 12 Ukpaba Road, Asaba, Delta State, Nigeria. We will respond promptly and in accordance with applicable law.</p>
       <p class="small text-muted">If you remain unsatisfied, you may lodge a complaint with Nigeria's supervisory authority—National Information Technology Development Agency (NITDA) — or another competent regulator where applicable.</p>
     </section>
 
@@ -246,9 +266,9 @@
         Data Protection Officer (DPO)<br>
         Asaba Business Community<br>
         Asaba, Delta State, Nigeria<br>
-        Email: <a href="mailto:adaonwubiko@asababusinesscommunity.com">privacy@asababusinesscommunity.com</a><br>
-        General enquiries: <a href="mailto:adaonwubiko@asababusinesscommunity.com">info@asababusinesscommunity.com</a><br>
-        Phone: <a href="tel:+2349071419508">+234 907 141 9508</a>
+        Email: <a href="mailto:adaonwubiko@asababusinesscommunity.com" class="some-links">privacy@asababusinesscommunity.com</a><br>
+        General enquiries: <a href="mailto:adaonwubiko@asababusinesscommunity.com" class="some-links">info@asababusinesscommunity.com</a><br>
+        Phone: <a href="tel:+2349071419508" class="some-links">+234 907 141 9508</a>
       </address>
     </section>
 
@@ -272,11 +292,12 @@
     </section> -->
 
   <!-- Footer (consistent) -->
-  <footer class="bg-white border-top mt-5">
+  <footer class="border-top mt-5"
+  style="background: var(--bg);">
     <div class="container py-5">
       <div class="row">
         <div class="col-md-4 mb-3">
-          <a href="./index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+          <a href="./index.html" class="some-links d-flex align-items-center gap-2 text-decoration-none">
             <img src="./assets/img/logo/abc-logo.png" alt="Asaba Business Community logo" width="40" height="40" loading="lazy">
             <span class="fw-bold">Asaba Business Community</span>
           </a>
@@ -284,17 +305,17 @@
         </div>
 
         <div class="col-md-4 mb-3">
-          <h6 class="text-uppercase small">Legal</h6>
+          <h6 class="text-uppercase small text-light">Legal</h6>
           <ul class="list-unstyled small">
-            <li><a href="./privacy.html">Privacy</a></li>
-            <li><a href="./terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="./privacy.html" class="some-links">Privacy</a></li>
+            <li><a href="./terms.html" class="some-links">Terms &amp; Conditions</a></li>
           </ul>
         </div>
 
         <div class="col-md-4 mb-3">
-          <h6 class="text-uppercase small">Contact</h6>
-          <p class="small mb-1">Email: <a href="mailto:adaonwubiko@asababusinesscommunity.com">info@asababusinesscommunity.com</a></p>
-          <p class="small">Phone: <a href="tel:+2349071419508">+234 907 141 9508</a></p>
+          <h6 class="text-uppercase small text-light">Contact</h6>
+          <p class="small mb-1">Email: <a href="mailto:adaonwubiko@asababusinesscommunity.com" class="some-links">info@asababusinesscommunity.com</a></p>
+          <p class="small">Phone: <a href="tel:+2349071419508" class="some-links">+234 907 141 9508</a></p>
         </div>
       </div>
 

@@ -18,23 +18,25 @@
   <title>Team — Asaba Business Community</title>
   <meta name="description" content="Team Asaba Business Community — Leadership and Teams" />
 
-  <!-- Google Fonts preconnect -->
+  <!-- Preconnect for fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts: Inter (body) + Playfair Display (headings) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap CSS (CDN) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- AOS & GLightbox CSS -->
+  <!-- AOS CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- GLightbox CSS -->
   <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
 
-  <!-- Bootstrap Icons -->
+  <!-- Bootstrap Icons (single icon set) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- Custom styles -->
-  <link rel="stylesheet" href="./assets/css/styles.css">
+  
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -43,6 +45,13 @@
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+
+  <!-- Neon Custom styles -->
+  <link rel="stylesheet" href="./assets/css/project.css" />
 
 
 
@@ -91,33 +100,35 @@
 
 
 </head>
-<body class="bg-light">
+<body style="--bs-body-bg: #000000; --muted: #5a6a77;">
+  <!-- <a class="skip-to-content-link" href="#main">Skip to content</a> -->
+   
 
-
-
-  <!-- Header / Navbar -->
-  <header class="sticky-top shadow-sm bg-white">
-    <nav id="mainNav" class="navbar navbar-expand-lg navbar-light container" aria-label="Primary navigation">
+   <!-- Header / Navbar -->
+  <header class="sticky-top shadow-sm text-light ">
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark container" 
+      aria-label="Primary navigation"
+      style=" background: rgba(0,0,0,0.9); backdrop-filter: saturate(180%) blur(20px);">
       <div class="container-fluid px-0">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="/index.html">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="./index.html">
           <img src="./assets/img/logo/abc-logo.png" alt="Asaba Business Community logo" width="40" height="40" loading="lazy">
           <span class="fw-bold">Asaba Business Community</span>
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapseTeam" aria-controls="navCollapseTeam" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navCollapseTeam">
+        <div class="collapse navbar-collapse" id="navCollapse">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
             <li class="nav-item"><a class="nav-link" href="./index.html#home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="./about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="./about.html">About</a></li>
             <li class="nav-item"><a class="nav-link" href="./events.html">Events</a></li>
             <li class="nav-item"><a class="nav-link" href="./projects.html">Projects</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="./team.html">Team</a></li>
+            <li class="nav-item"><a class="nav-link active" href="./team.html">Team</a></li>
             <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
             <li class="nav-item ms-3">
-              <a class="btn btn-primary btn-sm js-purchase-btn" role="button" data-purchase-url="#" aria-label="Join or buy a stall">Join Us Now</a>
+              <a class="btn btn-success btn-sm js-purchase-btn" role="button" data-purchase-url="#" aria-label="Join or buy a stall">Join Us Now</a>
             </li>
           </ul>
         </div>
@@ -125,13 +136,14 @@
     </nav>
   </header>
 
+
   <main id="main" class="container my-5">
     <!-- Hero / Intro -->
     <section class="mb-4" data-aos="fade-up">
       <div class="row align-items-center g-4">
         <div class="col-lg-8">
-          <h1 class="display-6 lh-1">Meet the team</h1>
-          <p class="lead text-muted">
+          <h1 class="neon-text display-4 lh-1 mb-1">Meet the Team</h1>
+          <p class="small text-muted">
             A small, dedicated team of community leaders, program managers, and volunteers who run events, and 
             partnerships to help Asaba's Business Community thrive.
           </p>
@@ -153,13 +165,13 @@
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
         <!-- Card: Adaeze Onwubiko -->
         <article class="col" data-aos="fade-up" data-aos-delay="30">
-          <div class="card h-100 shadow-sm border-0">
+          <div class="card h-100 shadow-sm border border-1 rounded-4 bg-transparent">
             <div class="ratio ratio-4x3 overflow-hidden">
-              <img src="./assets/img/team/team3.webp" alt="Chinyere Okafor, Founder and Executive Director" class="object-cover" loading="lazy" width="600" height="450">
+              <img src="./assets/img/team/team3.webp" alt="Chinyere Okafor, Founder and Executive Director" class="object-cover rounded-top-4" loading="lazy" width="600" height="450">
             </div>
             <div class="card-body">
-              <h3 class="h6 mb-1">Adaeze Onwubiko</h3>
-              <p class="text-muted small mb-2">Founder &amp; Executive Director</p>
+              <h3 class="h6 mb-1 text-light">Adaeze Onwubiko</h3>
+              <p class="text-warning small mb-2">Founder &amp; Executive Director</p>
               <p class="small text-muted mb-3">
                 A dynamic entrepreneur and the founder of the Asaba Business Community, 
                 an initiative she launched to uplift and empower local vendors in her city. 
@@ -180,13 +192,13 @@
 
         <!-- Card: Ruth Ukwuani -->
         <article class="col" data-aos="fade-up" data-aos-delay="60">
-          <div class="card h-100 shadow-sm border-0">
+          <div class="card h-100 shadow-sm border border-1 rounded-4 bg-transparent">
             <div class="ratio ratio-4x3 overflow-hidden">
-              <img src="./assets/img/team/team4.webp" alt="Ruth Ukwuani" class="object-cover" loading="lazy" width="600" height="450">
+              <img src="./assets/img/team/team4.webp" alt="Ruth Ukwuani" class="object-cover rounded-top-4" loading="lazy" width="600" height="450">
             </div>
             <div class="card-body">
-              <h3 class="h6 mb-1">Ruth Ukwuani</h3>
-              <p class="text-muted small mb-2">Growth Gurus Team</p>
+              <h3 class="h6 mb-1 text-light">Ruth Ukwuani</h3>
+              <p class="text-warning small mb-2">Dangote Tribe</p>
               <p class="small text-muted mb-3">
                 Owns Nerych Integrated Services, a business that provides food for events and supplies food items in bulk. 
                 She also runs a cooperative savings group with over 150 business owners as members. Additionally, 
@@ -204,13 +216,13 @@
 
         <!-- Card: Anwasia Anthonia -->
         <article class="col" data-aos="fade-up" data-aos-delay="60">
-          <div class="card h-100 shadow-sm border-0">
+          <div class="card h-100 shadow-sm border border-1 rounded-4 bg-transparent">
             <div class="ratio ratio-4x3 overflow-hidden">
-              <img src="./assets/img/team/team2.webp" alt="Anwasia Anthonia" class="object-cover" loading="lazy" width="600" height="450">
+              <img src="./assets/img/team/team2.webp" alt="Anwasia Anthonia" class="object-cover rounded-top-4" loading="lazy" width="600" height="450">
             </div>
             <div class="card-body">
-              <h3 class="h6 mb-1">Anwasia Anthonia</h3>
-              <p class="text-muted small mb-2">Hustle Heros</p>
+              <h3 class="h6 mb-1 text-light">Anwasia Anthonia</h3>
+              <p class="text-warning small mb-2">Otedola Tribe</p>
               <p class="small text-muted mb-3">
                 She has a PhD in Agricultural Economics from the University of Nigeria, Nsukka. 
                 She owns Errand Girl Logistics, a company that handles errands and logistics for businesses. 
@@ -228,13 +240,13 @@
 
         <!-- Card: Christabel Efe -->
         <article class="col" data-aos="fade-up" data-aos-delay="60">
-          <div class="card h-100 shadow-sm border-0">
+          <div class="card h-100 shadow-sm border border-1 rounded-4 bg-transparent">
             <div class="ratio ratio-4x3 overflow-hidden">
-              <img src="./assets/img/team/team5.webp" alt="Christabel Efe" class="object-cover" loading="lazy" width="600" height="450">
+              <img src="./assets/img/team/team5.webp" alt="Christabel Efe" class="object-cover rounded-top-4" loading="lazy" width="600" height="450">
             </div>
             <div class="card-body">
-              <h3 class="h6 mb-1">Christabel Efe</h3>
-              <p class="text-muted small mb-2">Verification Team</p>
+              <h3 class="h6 mb-1 text-light">Christabel Efe</h3>
+              <p class="text-warning small mb-2">Verification Team</p>
               <p class="small text-muted mb-3">
                 Owns Christabel Collections, a brand that offers clothing, shoes, bags, and household essentials. 
                 She also owns Strawberry, a popular popcorn brand. She currently leads the Verification team.
@@ -251,13 +263,13 @@
 
         <!-- Card: Ifeanyi Nwose -->
         <article class="col" data-aos="fade-up" data-aos-delay="60">
-          <div class="card h-100 shadow-sm border-0">
+          <div class="card h-100 shadow-sm border border-1 rounded-4 bg-transparent">
             <div class="ratio ratio-4x3 overflow-hidden">
-              <img src="./assets/img/team/team1.webp" alt="Ifeanyi Nwose" class="object-cover" loading="lazy" width="600" height="450">
+              <img src="./assets/img/team/team1.webp" alt="Ifeanyi Nwose" class="object-cover rounded-top-4" loading="lazy" width="600" height="450">
             </div>
             <div class="card-body">
-              <h3 class="h6 mb-1">Ifeanyi Nwose</h3>
-              <p class="text-muted small mb-2">Visionaries</p>
+              <h3 class="h6 mb-1 text-light">Ifeanyi Nwose</h3>
+              <p class="text-warning small mb-2">Cubana Tribe</p>
               <p class="small text-muted mb-3">
                 Currently heads the VISIONARIES. He is the founder and owner of DJ Finest Entertainment Empire, a prominent name 
                 in the local entertainment scene, renowned for organizing the best after-parties in town. his ability to create unforgettable
@@ -277,13 +289,13 @@
 
         <!-- Card: Ekene Monyei -->
         <article class="col" data-aos="fade-up" data-aos-delay="60">
-          <div class="card h-100 shadow-sm border-0">
+          <div class="card h-100 shadow-sm border border-1 rounded-4 bg-transparent">
             <div class="ratio ratio-4x3 overflow-hidden">
-              <img src="./assets/img/team/team7.webp" alt="Ekene Monyei" class="object-cover" loading="lazy" width="600" height="450">
+              <img src="./assets/img/team/team7.webp" alt="Ekene Monyei" class="object-cover rounded-top-4" loading="lazy" width="600" height="450">
             </div>
             <div class="card-body">
-              <h3 class="h6 mb-1">Ekene Monyei</h3>
-              <p class="text-muted small mb-2">Innovators Team</p>
+              <h3 class="h6 mb-1 text-light">Ekene Monyei</h3>
+              <p class="text-warning small mb-2">Elumelu Tribe</p>
               <p class="small text-muted mb-3">
                 Is an experienced educator and manager with over 10 years in the education sector. 
                 She is highly skilled and runs Reddaofresh, a large seafood brand that meets all seafood needs in Asaba. 
@@ -301,13 +313,13 @@
 
         <!-- Card: Anita Nwabukwu -->
         <article class="col" data-aos="fade-up" data-aos-delay="60">
-          <div class="card h-100 shadow-sm border-0">
+          <div class="card h-100 shadow-sm border border-1 rounded-4 bg-transparent">
             <div class="ratio ratio-4x3 overflow-hidden">
-              <img src="./assets/img/team/team6.webp" alt="Anita Nwabukwu" class="object-cover" loading="lazy" width="600" height="450">
+              <img src="./assets/img/team/team6.webp" alt="Anita Nwabukwu" class="object-cover rounded-top-4" loading="lazy" width="600" height="450">
             </div>
             <div class="card-body">
-              <h3 class="h6 mb-1">Anita Nwabukwu</h3>
-              <p class="text-muted small mb-2">Hustle Heros</p>
+              <h3 class="h6 mb-1 text-light">Anita Nwabukwu</h3>
+              <p class="text-warning small mb-2">Hustle Heros</p>
               <p class="small text-muted mb-3">
                 Runs a printing business, Marynit Printing Enterprise that handles research work, publishing, 
                 and printing services. She also leads the Hustle heros team for Asaba vendors.
@@ -398,20 +410,18 @@
     </section>
 
     <!-- CTA -->
-    <!-- CTA / Partner / Sponsor -->
+       <!-- CTA / Partner / Sponsor -->
     <section class="py-5 text-center" data-aos="fade-up">
       <div class="card border-0 shadow-sm mx-auto p-4"
-      style="max-width:820px; background: #bdc3c7;  /* fallback for old browsers */
-          background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-          background: linear-gradient(to top, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */"
-      >
+      style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/img/hero/home.webp');
+        background-size: cover;">
         <h3 class="h5 mb-2 text-light">Partner with us or join as a vendor</h3>
         <h5 class="small text-light mb-3">
           Join us today and start your journey towards greater achievements. 
           Your business deserves the best, let’s make it happen together!
         </h5>
         <div class="d-flex justify-content-center gap-2">
-          <a class="btn btn-primary js-purchase-btn" data-purchase-url="#" role="button">Join Us Now</a>
+          <a class="btn btn-success js-purchase-btn" data-purchase-url="#" role="button">Join Us Now</a>
           <a class="btn btn-outline-light" href="mailto:adaonwubiko@asababusinesscommunity.com?subject=Sponsor%20an%20event%20in%20Asaba">Sponsor an event</a>
         </div>
       </div>
@@ -438,44 +448,44 @@
     </div>
   </div> -->
 
-   <!-- Footer (same as index) -->
-   <footer class="bg-white border-top mt-5">
+   <!-- Footer -->
+  <footer class="border-top mt-5">
     <div class="container py-5">
       <div class="row">
         <div class="col-md-4 mb-3">
-          <a href="./index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+          <a href="./index.html" class="d-flex align-items-center gap-2 some-links">
             <img src="./assets/img/logo/abc-logo.png" alt="Asaba Business Community logo" width="40" height="40" loading="lazy">
             <span class="fw-bold">Asaba Business Community</span>
           </a>
           <p class="small text-muted mt-2">Supporting small businesses in Asaba through markets, training, and partnerships since 2021.</p>
           <p class="small text-muted mb-0">Address: Asaba, Delta State, Nigeria, West Africa.</p>
-          <p class="small text-muted">Phone: <a href="tel:+2349071419508">+234 907 141 9508</a></p>
+          <p class="small text-muted">Phone: <a href="tel:+2349071419508" class="some-links">+234 907 141 9508</a></p>
         </div>
 
         <div class="col-md-2 mb-3">
-          <h6 class="text-uppercase small">Quick links</h6>
+          <h6 class="text-uppercase text-light small">Quick links</h6>
           <ul class="list-unstyled small">
-            <li><a href="./about.html" class="text-decoration-none">About</a></li>
-            <li><a href="./events.html" class="text-decoration-none">Events</a></li>
-            <li><a href="./projects.html" class="text-decoration-none">Projects</a></li>
-            <li><a href="./team.html" class="text-decoration-none">Team</a></li>
+            <li><a href="./about.html" class="some-links">About</a></li>
+            <li><a href="./events.html" class="some-links">Events</a></li>
+            <li><a href="./projects.html" class="some-links">Projects</a></li>
+            <li><a href="./team.html" class="some-links">Team</a></li>
           </ul>
         </div>
 
         <div class="col-md-3 mb-3">
-          <h6 class="text-uppercase small">Contact</h6>
-          <p class="small mb-1">Email: <a href="mailto:adaonwubiko@asababusinesscommunity.com">info@asababusinesscommunity.com</a></p>
-          <p class="small">Office hours: Mon–Sun, 9am–5pm</p>
+          <h6 class="text-uppercase text-light small">Contact</h6>
+          <p class="small mb-1">Email: <a href="adaonwubiko@asababusinesscommunity.com" class="some-links">info@asababusinesscommunity.com</a></p>
+          <p class="small text-warning">Office hours: Mon–Sun, 9am–5pm</p>
           <div class="d-flex gap-2 mt-2">
-            <a class="btn btn-outline-dark btn-sm" href="https://web.facebook.com/asababusiness1?mibextid=ZbWKwL&_rdc=1&_rdr" aria-label="Follow us on Facebook" target="_blank"><i class="bi bi-facebook"></i></a>
-            <a class="btn btn-outline-dark btn-sm" href="https://www.youtube.com/@asababusinesscommunity3445?si=x8nm39pqfY73vUrM" aria-label="Follow us on Youtube" target="_blank"><i class="bi bi-youtube"></i></a>
-            <a class="btn btn-outline-dark btn-sm" href="https://www.instagram.com/asababusiness/" aria-label="Follow us on instagram" target="_blank"><i class="bi bi-instagram"></i></a>
-            <a class="btn btn-outline-dark btn-sm" href="https://whatsapp.com" aria-label="Chat Us on Whatsapp" target="_blank"><i class="bi bi-whatsapp"></i></a>
+            <a class="btn btn-outline-primary btn-sm" href="https://web.facebook.com/asababusiness1?mibextid=ZbWKwL&_rdc=1&_rdr" aria-label="Follow us on Facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a class="btn btn-outline-danger btn-sm" href="https://www.youtube.com/@asababusinesscommunity3445?si=x8nm39pqfY73vUrM" aria-label="Follow us on Youtube" target="_blank"><i class="bi bi-youtube"></i></a>
+            <a class="btn btn-outline-info btn-sm" href="https://www.instagram.com/asababusiness/" aria-label="Follow us on instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a class="btn btn-outline-success btn-sm" href="https://whatsapp.com" aria-label="Chat Us on Whatsapp" target="_blank"><i class="bi bi-whatsapp"></i></a>
           </div>
         </div>
 
         <div class="col-md-3 mb-3">
-          <h6 class="text-uppercase small">Loaction</h6>
+          <h6 class="text-uppercase text-light small">Loaction</h6>
           <p class="small text-muted">Asaba, Delta State, Nigeria.</p>
           <iframe title="Asaba Business Community location map" 
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d507864.6896927716!2d6.4721804!3d6.0368148!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104392b2b061bd39%3A0x749611dbcabe9489!2sAsaba%2C%20Delta!5e0!3m2!1sen!2sng!4v1725130329047!5m2!1sen!2sng" 
@@ -491,15 +501,16 @@
 
       <div class="border-top pt-3 mt-3 d-flex justify-content-between small">
         <div>&copy; <span id="current-year"></span> Asaba Business Community — All rights reserved.</div>
-        <div><a href="./privacy.html" class="text-decoration-none">Privacy</a> · <a href="./terms.html" class="text-decoration-none">Terms</a></div>
+        <div><a href="./privacy.html" class="some-links">Privacy</a> · <a href="./terms.html" class="some-links">Terms</a></div>
       </div>
     </div>
   </footer>
 
   <!-- Back to top -->
-  <button id="backToTop" class="btn btn-primary btn-lg rounded-circle" aria-label="Back to top" style="display:none;position:fixed;right:1rem;bottom:1rem;z-index:999;">
+  <button id="backToTop" class="btn btn-success btn-lg rounded-circle" aria-label="Back to top" style="display:none;position:fixed;right:1rem;bottom:1rem;z-index:999;">
     <i class="bi bi-arrow-up"></i>
   </button>
+
 
   <!-- JS dependencies (deferred) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>

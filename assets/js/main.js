@@ -131,6 +131,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+
+
+
   /* Back to top button behavior */
   const backBtn = document.getElementById('backToTop');
   if (backBtn) {
@@ -224,3 +227,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 }); // DOMContentLoaded
+
+
+
+
+
+
