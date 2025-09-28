@@ -16,14 +16,17 @@
 :root{
   /* Colors */
   --brand-900: #063440;   /* deep */
-  --brand-700: #0b4a6f;   /* primary brand used in theme-color */
+  --brand-700: #ffffff;   /* primary brand used in theme-color */
   --accent-500: #ff7a18;  /* warm accent for CTAs */
-  --bg: #ffffff;
+  --bg: #000000;
   --surface: #f8fafb;
   --muted: #0b2233;
   --text: #0b2233;
-  --success: #198754;
+  --success: #39d089;
   --danger: #dc3545;
+  --warning: #ffc107;
+  --info: #0dcaf0;
+  
 
   /* Spacing scale */
   --space-xs: 0.25rem;
@@ -57,23 +60,23 @@
 }
 
 /* Dark mode (optional) */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root{
     --bg: #071018;
     --surface: #0b1720;
     --muted: #9aa7ad;
     --text: #e6f2f3;
   }
-}
+} */
 
 /* =========================
    Base typography & body
    ========================= */
+
 html,body{
   height: 100%;
   font-family: var(--font-sans);
   color: var(--text);
-  background-color: var(--bg);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   line-height: 1.45;
@@ -82,7 +85,7 @@ html,body{
 /* Headings: slightly more distinguished using serif headline */
 h1,h2,h3,h4,h5,h6{
   font-family: var(--font-serif);
-  color: var(--brand-700);
+  color: var(--brand-700) !important;
   margin-top: 0;
 }
 
@@ -144,10 +147,13 @@ h1,h2,h3,h4,h5,h6{
   border-radius: var(--radius-md);
 }
 
+
+
 .btn-primary:hover,
 .btn-primary:focus{
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
+  
 }
 
 .btn-outline-primary{
@@ -226,6 +232,7 @@ h1,h2,h3,h4,h5,h6{
 footer{
   font-size: 0.9rem;
   color: var(--muted);
+  background-color: var(--bg);
 }
 
 /* Back to top button */
@@ -286,4 +293,31 @@ footer{
 /* Ensure modals have a readable max-width */
 .modal-lg{
   max-width: 900px;
+}
+
+/* Nav link */
+
+.nav-link:hover,
+.nav-link:focus{
+  color: var(--brand-700);
+}
+
+
+/* Projects Tabs */
+.category{
+  color: var(--success);
+}
+
+
+/* Footer Links */
+.some-links{
+  color: var(--success);
+  text-decoration: none;
+
+}
+.some-links:hover,
+.some-links:focus{
+  color: var(--brand-700);
+  text-decoration: underline;
+  
 }

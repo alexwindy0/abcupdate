@@ -19,15 +19,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
-  <!-- Bootstrap CSS -->
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts: Inter (body) + Playfair Display (headings) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS (CDN) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- AOS & GLightbox CSS -->
+  <!-- AOS CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- GLightbox CSS -->
   <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
 
-  <!-- Bootstrap Icons -->
+  <!-- Bootstrap Icons (single icon set) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -39,7 +49,10 @@
 
 
   <!-- Custom styles -->
-  <link rel="stylesheet" href="./assets/css/styles.css">
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+
+  <!-- Neon Custom styles -->
+  <link rel="stylesheet" href="./assets/css/project.css" />
 
   <!-- Organization JSON-LD -->
   <script type="application/ld+json">
@@ -71,14 +84,18 @@
 
 
 </head>
-<body class="bg-light">
+<body style="--bs-body-bg: #000000; --muted: #5a6a77;">
+  <!-- <a class="skip-to-content-link" href="#main">Skip to content</a> -->
 
+  
   <!-- Skip to content -->
   <!-- <a class="visually-hidden-focusable skip-link" href="#main">Skip to content</a> -->
 
   <!-- Header / Navbar -->
-  <header class="sticky-top shadow-sm bg-white">
-    <nav id="mainNav" class="navbar navbar-expand-lg navbar-light container" aria-label="Primary navigation">
+  <header class="sticky-top shadow-sm text-light ">
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark container" 
+      aria-label="Primary navigation"
+      style=" background: rgba(0,0,0,0.9); backdrop-filter: saturate(180%) blur(20px);">
       <div class="container-fluid px-0">
         <a class="navbar-brand d-flex align-items-center gap-2" href="./index.html">
           <img src="./assets/img/logo/abc-logo.png" alt="Asaba Business Community logo" width="40" height="40" loading="lazy">
@@ -92,13 +109,13 @@
         <div class="collapse navbar-collapse" id="navCollapse">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
             <li class="nav-item"><a class="nav-link" href="./index.html#home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="./about.html">About</a></li>
             <li class="nav-item"><a class="nav-link" href="./events.html">Events</a></li>
-            <li class="nav-item"><a class="nav-link" href="./projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link active" href="./projects.html">Projects</a></li>
             <li class="nav-item"><a class="nav-link" href="./team.html">Team</a></li>
             <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
             <li class="nav-item ms-3">
-              <a class="btn btn-primary btn-sm js-purchase-btn" role="button" data-purchase-url="#" aria-label="Join or buy a stall">Join Us Now</a>
+              <a class="btn btn-success btn-sm js-purchase-btn" role="button" data-purchase-url="#" aria-label="Join or buy a stall">Join Us Now</a>
             </li>
           </ul>
         </div>
@@ -108,7 +125,7 @@
 
   <main id="main" class="container my-5">
     <header class="mb-4" data-aos="fade-up">
-      <h1 class="display-6 lh-1">Terms &amp; Conditions</h1>
+      <h1 class="display-4 lh-1 text-light">Terms &amp; Conditions</h1>
       <p class="small text-muted">Effective date: <strong>28 August 2025</strong></p>
       <p class="lead text-muted">These Terms govern your access to and use of services offered by Asaba Business Community ("ABC", "we", "us"). By using our site, booking a stall, or registering for services, you agree to these terms.</p>
     </header>
@@ -185,7 +202,7 @@
     <!-- Privacy reference -->
     <section class="mb-4" data-aos="fade-up">
       <h2 class="h5">10. Privacy</h2>
-      <p class="small text-muted">Our Privacy Policy (available at <a href="./privacy.html">/privacy.html</a>) explains how we collect, use, and protect your personal data. By using our services you agree to our data practices described in the Privacy Policy.</p>
+      <p class="small text-muted">Our Privacy Policy (available at <a href="./privacy.html" class="some-links">/privacy.html</a>) explains how we collect, use, and protect your personal data. By using our services you agree to our data practices described in the Privacy Policy.</p>
     </section>
 
     <!-- Changes to terms -->
@@ -215,7 +232,12 @@
     <!-- Contact & acceptance -->
     <section class="mb-5" data-aos="fade-up">
       <h2 class="h5">15. Contact & acceptance</h2>
-      <p class="small text-muted">If you have questions about these Terms, contact us at <a href="mailto:adaonwubiko@asababusinesscommunity.com">info@asababusinesscommunity.com</a> or call +234 800 000 0000. By using our services or booking with ABC you confirm you accept these Terms.</p>
+      <p class="small text-muted">If you have questions about these Terms, contact us at 
+        <a href="mailto:adaonwubiko@asababusinesscommunity.com" class="some-links">
+          info@asababusinesscommunity.com
+        </a> 
+          or call +234 800 000 0000. By using our services or booking with ABC you confirm you accept these Terms.
+      </p>
     </section>
 
     <!-- CTA -->
@@ -229,11 +251,12 @@
   </main> -->
 
   <!-- Footer -->
-  <footer class="bg-white border-top mt-5">
+  <footer class="border-top mt-5"
+  style="background: var(--bg);">
     <div class="container py-5">
       <div class="row">
         <div class="col-md-4 mb-3">
-          <a href="./index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+          <a href="./index.html" class="some-links d-flex align-items-center gap-2 text-decoration-none">
             <img src="./assets/img/logo/abc-logo.png" alt="Asaba Business Community logo" width="40" height="40" loading="lazy">
             <span class="fw-bold">Asaba Business Community</span>
           </a>
@@ -241,17 +264,17 @@
         </div>
 
         <div class="col-md-4 mb-3">
-          <h6 class="text-uppercase small">Support</h6>
+          <h6 class="text-uppercase small text-light">Support</h6>
           <ul class="list-unstyled small">
-            <li><a href="./contact.html">Contact</a></li>
-            <li><a href="./privacy.html">Privacy</a></li>
+            <li><a href="./contact.html" class="some-links">Contact</a></li>
+            <li><a href="./privacy.html" class="some-links">Privacy</a></li>
           </ul>
         </div>
 
         <div class="col-md-4 mb-3">
-          <h6 class="text-uppercase small">Contact</h6>
-          <p class="small mb-1">Email: <a href="mailto:adaonwubiko@asababusinesscommunity.com">info@asababusinesscommunity.com</a></p>
-          <p class="small">Phone: <a href="tel:+2349071419508">+234 907 141 9508</a></p>
+          <h6 class="text-uppercase small text-light">Contact</h6>
+          <p class="small mb-1">Email: <a href="mailto:adaonwubiko@asababusinesscommunity.com" class="some-links">info@asababusinesscommunity.com</a></p>
+          <p class="small">Phone: <a href="tel:+2349071419508" class="some-links">+234 907 141 9508</a></p>
         </div>
       </div>
 
